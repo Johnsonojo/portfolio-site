@@ -9,11 +9,11 @@ const MainNav = () => {
   return (
     <Navbar bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#home">Johnson Ojo</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
+          <Link to="/">Home</Link>
           <Link to="/blog">Blog</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contacts</Link>
         </Nav>
       </Container>
     </Navbar>

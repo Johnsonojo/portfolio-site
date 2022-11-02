@@ -1,11 +1,9 @@
 import React from "react";
-import MainNav from "../../components/mainNav";
 
 const Blog = () => {
   return (
     <div>
-      <MainNav />
-      <h1>Blog</h1>
+      <h1>Blog Page</h1>
     </div>
   );
 };
