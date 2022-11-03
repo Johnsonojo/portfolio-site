@@ -1,0 +1,58 @@
+@import "../../styles/theme-variables.scss";
+
+.login-wrapper {
+  @include themify($themes) {
+    background-color: themed("colorBackground");
+  }
+  height: 92vh;
+
+  .form-container {
+    @include themify($themes) {
+      background-color: themed("formBackground");
+      color: themed("formTextColor");
+    }
+    border-radius: 10px;
+    margin: 50px auto;
+    padding: 40px;
+
+    .form-title {
+      @include themify($themes) {
+        color: themed("formTextColor");
+      }
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    input {
+      height: 45px;
+    }
+
+    .error-label {
+      color: red;
+      display: flex;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    button {
+      @include themify($themes) {
+        background-color: themed("buttonBackground");
+        color: themed("colorTextPrimary");
+      }
+      height: 45px;
+      border-radius: 5px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+
+      &:hover {
+        @include themify($themes) {
+          background-color: themed("colorBackground");
+        }
+      }
+    }
+  }
+}
