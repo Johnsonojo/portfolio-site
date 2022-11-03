@@ -1,7 +1,10 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.scss";
 import MainNav from "./components/MainNav";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
@@ -56,6 +59,7 @@ function App() {
               </Route>
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
+            <ToastContainer />
           </div>
         </BrowserRouter>
         <ReactQueryDevtools initialIsOpen={false} />
