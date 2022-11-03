@@ -4,6 +4,9 @@ $themes: (
     colorTextPrimary: #000000,
     colorTextSecondary: #1e1e1e,
     colorTextTertiary: #dddde0,
+    formBackground: #2a2e41,
+    formTextColor: #ffffff,
+    buttonBackground: #dddde0,
     // primary: #3880ff,
     // secondary: #3dc2ff,
     // tertiary: #5260ff,
@@ -12,13 +15,17 @@ $themes: (
     // danger: #eb445a,
     // dark: #222428,
     // medium: #92949c,
-    // light: #f4f5f8,,,,,,,,,,,,,,,,,,
+    // light: #f4f5f8,,,,,,,,,,,
   ),
   dark: (
     colorBackground: #060b20,
     colorTextPrimary: #ffffff,
     colorTextSecondary: #f4f5f8,
     colorTextTertiary: #36394c,
+    formBackground: #ffffff,
+    formTextColor: #060b20,
+    buttonBackground: #2a2e41,
+
     // primary: #3880ff,
     // secondary: #3dc2ff,
     // tertiary: #5260ff,
@@ -27,7 +34,7 @@ $themes: (
     // danger: #eb445a,
     // dark: #222428,
     // medium: #92949c,
-    // light: #f4f5f8,,,,,,,,,,,,,,,,,,
+    // light: #f4f5f8,,,,,,,,,,,
   ),
 );
 
