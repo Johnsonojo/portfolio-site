@@ -1,13 +1,69 @@
-.me-auto a {
-  color: #000000;
-  text-decoration: none;
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease-in-out;
+@import "../../styles/theme-variables.scss";
 
-  &:hover {
-    background-color: rgb(231, 229, 229);
-    color: #000;
+.main-wrapper {
+  @include themify($themes) {
+    background-color: themed("colorBackground");
+    color: themed("colorTextPrimary");
+  }
+
+  .container {
+    .navbar-brand {
+      @include themify($themes) {
+        color: themed("colorTextPrimary");
+      }
+    }
+
+    button {
+      @include themify($themes) {
+        color: themed("colorTextPrimary");
+        border: 1px solid themed("colorTextPrimary");
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .me-auto {
+      justify-content: space-between;
+      li {
+        @include themify($themes) {
+          color: themed("colorTextPrimary");
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        a {
+          @include themify($themes) {
+            color: themed("colorTextPrimary");
+          }
+          text-decoration: none;
+          font-size: 1.2rem;
+          padding: 1rem;
+          border-radius: 0.5rem;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            @include themify($themes) {
+              background-color: themed("colorTextTertiary");
+            }
+          }
+        }
+      }
+
+      .icon-wrapper {
+        align-items: center;
+        justify-content: center;
+
+        button {
+          transition: all 0.5s;
+          border: none;
+          cursor: pointer;
+          background: none;
+        }
+      }
+    }
   }
 }
