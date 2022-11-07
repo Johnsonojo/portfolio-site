@@ -1,0 +1,9 @@
+@import "../../../styles/theme-variables.scss";
+
+.articles-wrapper {
+  @include themify($themes) {
+    background-color: themed("colorBackground");
+    color: themed("colorTextPrimary");
+  }
+  height: 100vh !important;
+}

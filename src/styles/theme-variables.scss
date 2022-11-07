@@ -10,6 +10,10 @@ $themes: (
     inputTextColor: #000000,
     borderColor: #707072,
     editorTextColor: #000000,
+    articleCardBorderColor: #dddde0,
+    articleCardHoverBorderColor: #dddde0,
+    tagBadgeBackground: #062943,
+    tagBadgeColor: #ffffff,
   ),
   dark: (
     colorBackground: #060b20,
@@ -22,6 +26,10 @@ $themes: (
     inputTextColor: #000000,
     borderColor: #707072,
     editorTextColor: #000000,
+    articleCardBorderColor: #666666,
+    articleCardHoverBorderColor: #373b52,
+    tagBadgeBackground: #e5e5e5,
+    tagBadgeColor: #060b20,
   ),
 );
 
