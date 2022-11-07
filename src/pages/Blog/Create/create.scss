@@ -1,0 +1,75 @@
+@import "../../../styles/theme-variables.scss";
+
+.create-article {
+  @include themify($themes) {
+    background-color: themed("colorBackground");
+  }
+  height: 100% !important;
+
+  .container-fluid {
+    @include themify($themes) {
+      background-color: themed("colorBackground");
+    }
+    padding-top: 1px;
+    padding-bottom: 30px;
+
+    h3 {
+      @include themify($themes) {
+        color: themed("colorTextPrimary");
+      }
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .form-container {
+      @include themify($themes) {
+        background-color: themed("formBackground");
+        color: themed("formTextColor");
+      }
+      border-radius: 10px;
+      padding: 40px;
+
+      .form-title {
+        @include themify($themes) {
+          color: themed("formTextColor");
+        }
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      input {
+        @include themify($themes) {
+          color: themed("inputTextColor");
+        }
+        height: 45px;
+      }
+
+      .error-label {
+        color: red;
+        display: flex;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      button {
+        @include themify($themes) {
+          background-color: themed("buttonBackground");
+          color: themed("colorTextPrimary");
+        }
+        height: 45px;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 600;
+
+        &:hover {
+          @include themify($themes) {
+            background-color: themed("colorBackground");
+          }
+        }
+      }
+    }
+  }
+}
