@@ -47,7 +47,7 @@ function App() {
               <Route path="/blog" element={<AllBlog />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/blog/:id" element={<SingleArticle />} />
+              <Route path="/blog/:slug" element={<SingleArticle />} />
               <Route path="/login" element={<LoginPage />} />
 
               <Route element={<ProtectedRoute user={user?.id} />}>
