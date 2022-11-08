@@ -4,8 +4,6 @@ import axiosPrivateMultipart from "../axiosMethods/axiosPrivateMultipart";
 const blogAPI = {};
 
 blogAPI.createArticle = async (formData) => {
-  console.log("formData", formData);
-
   try {
     const response = await axiosPrivateMultipart.post("articles", formData);
     const { data } = response;
