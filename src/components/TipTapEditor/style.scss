@@ -4,19 +4,19 @@
   border-radius: 0.5rem;
   background-color: #fff;
   min-height: 300px;
+  border: 1px solid #dddde0;
 
   .menu-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    border-bottom: 1px solid #616161;
+    border-bottom: 1px solid #bfbfc1;
     padding-bottom: 0.5rem;
 
     button {
       @include themify($themes) {
-        background-color: themed("buttonBackground");
-        color: themed("colorTextPrimary");
+        color: themed("editorButtonColor") !important;
       }
       border: none;
       background-color: #fff !important;
@@ -28,10 +28,15 @@
       outline: none;
 
       &:hover {
-        background-color: #e2e8f0;
+        @include themify($themes) {
+          background-color: themed("editorButtonBackground") !important;
+        }
+        background-color: #dddde0 !important;
       }
       &.is-active {
-        background: rgb(107, 107, 107, 0.2);
+        @include themify($themes) {
+          background-color: themed("editorButtonBackground") !important;
+        }
         padding: 2px 3px;
         border-radius: 0.2rem;
       }
@@ -57,6 +62,7 @@
     }
   }
   .ProseMirror {
+    color: #0d0d0d;
     padding: 1rem;
     min-height: 20rem;
     background-color: #fff;
