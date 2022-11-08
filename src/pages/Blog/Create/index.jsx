@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import TipTap from "../../../components/TipTapEditor";
 import blogAPI from "../../../redux/api/blogAPI";
-import "./create.scss";
+import "./styles.scss";
 
 const CreateArticle = () => {
   const {
@@ -32,8 +32,14 @@ const CreateArticle = () => {
   });
 
   const onSubmit = (data) => {
-    const articleDetails = data;
-    mutation.mutate({ articleDetails });
+    const formData = new FormData();
+
+    formData.append("articleTitle", data.articleTitle);
+    formData.append("articleBody", data.articleBody);
+    formData.append("tags", data.tags);
+    formData.append("file", data.file[0]);
+
+    mutation.mutate(formData);
   };
 
   return (
@@ -58,10 +64,37 @@ const CreateArticle = () => {
               {errors?.articleTitle?.message}
             </label>
           </div>
+          <div className="form-group mb-4">
+            <label className="form-label">Featured Image</label>
+            <input
+              type="file"
+              className="form-control"
+              id="file"
+              {...register("file", { required: true })}
+            />
+            <label className="error-label">
+              {errors.file?.type === "required" &&
+                "Article featured image is required"}
+            </label>
+            <label className="error-label">{errors?.file?.message}</label>
+          </div>
 
           <div className="form-group mb-4">
+            <label className="form-label">Tags</label>
+            <input
+              type="text"
+              className="form-control"
+              id="tags"
+              placeholder="Enter article tags"
+              {...register("tags", { required: true })}
+            />
+            <label className="error-label">
+              {errors.tags?.type === "required" && "Article tags are required"}
+            </label>
+            <label className="error-label">{errors?.tags?.message}</label>
+          </div>
+          <div className="form-group mb-4">
             <label className="form-label">Body</label>
-
             <Controller
               name="articleBody"
               control={control}
@@ -79,6 +112,7 @@ const CreateArticle = () => {
               {errors?.articleBody?.message}
             </label>
           </div>
+
           <button
             type="submit"
             disabled={!isDirty || !isValid}
