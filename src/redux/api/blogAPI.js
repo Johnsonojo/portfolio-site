@@ -1,10 +1,13 @@
 import axiosPrivate from "../axiosMethods/axiosPrivate";
+import axiosPrivateMultipart from "../axiosMethods/axiosPrivateMultipart";
 
 const blogAPI = {};
 
-blogAPI.createArticle = async ({ articleDetails }) => {
+blogAPI.createArticle = async (formData) => {
+  console.log("formData", formData);
+
   try {
-    const response = await axiosPrivate.post("article", articleDetails);
+    const response = await axiosPrivateMultipart.post("articles", formData);
     const { data } = response;
     return data;
   } catch (error) {
@@ -14,7 +17,7 @@ blogAPI.createArticle = async ({ articleDetails }) => {
 
 blogAPI.getAllArticles = async () => {
   try {
-    const response = await axiosPrivate.get("article");
+    const response = await axiosPrivate.get("articles");
     const { data } = response;
     return data;
   } catch (error) {
@@ -24,7 +27,7 @@ blogAPI.getAllArticles = async () => {
 
 blogAPI.getOneArticle = async (articleId) => {
   try {
-    const response = await axiosPrivate.get(`article/${articleId}`);
+    const response = await axiosPrivate.get(`articles/${articleId}`);
     const { data } = response;
     return data;
   } catch (error) {
@@ -35,7 +38,7 @@ blogAPI.getOneArticle = async (articleId) => {
 blogAPI.updateArticle = async ({ articleId, articleDetails }) => {
   try {
     const response = await axiosPrivate.put(
-      `article/${articleId}`,
+      `articles/${articleId}`,
       articleDetails
     );
     const { data } = response;
@@ -47,7 +50,7 @@ blogAPI.updateArticle = async ({ articleId, articleDetails }) => {
 
 blogAPI.deleteArticle = async (articleId) => {
   try {
-    const response = await axiosPrivate.delete(`article/${articleId}`);
+    const response = await axiosPrivate.delete(`articles/${articleId}`);
     const { data } = response;
     return data;
   } catch (error) {
