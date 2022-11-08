@@ -16,6 +16,7 @@ const ArticleCard = ({ article }) => {
         variant="top"
         src={article?.articleImage || codePics}
         alt={article?.articleImage}
+        className="article-image"
       />
       <Card.Body className="px-3">
         <Card.Title className="article-card-title">
@@ -24,8 +25,8 @@ const ArticleCard = ({ article }) => {
 
         <div className="tags pb-2">
           {article?.tags?.map((tag) => (
-            <span className="tag-badge px-2 py-1" key={tag}>
-              {tag}
+            <span className="tag-badge px-2 py-1" key={tag.id}>
+              {tag.name}
             </span>
           ))}
         </div>
