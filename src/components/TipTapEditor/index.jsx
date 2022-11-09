@@ -1,12 +1,12 @@
-import FontFamily from "@tiptap/extension-font-family";
+// import FontFamily from "@tiptap/extension-font-family";
+// import Dropdown from "react-bootstrap/Dropdown";
+// import DropdownButton from "react-bootstrap/DropdownButton";
 import TextAlign from "@tiptap/extension-text-align";
 import TextStyle from "@tiptap/extension-text-style";
 import Underline from "@tiptap/extension-underline";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import React from "react";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 import { BiCodeBlock, BiParagraph } from "react-icons/bi";
 import { BsJustify } from "react-icons/bs";
 import { FaListOl, FaListUl, FaRedo, FaUndo } from "react-icons/fa";
@@ -134,7 +134,7 @@ const MenuBar = ({ editor }) => {
       </button>
 
       {/* Fonts */}
-      <DropdownButton
+      {/* <DropdownButton
         id="dropdown-item-button"
         title="Select Font"
         variant="dark"
@@ -189,7 +189,7 @@ const MenuBar = ({ editor }) => {
         >
           Cursive
         </Dropdown.Item>
-      </DropdownButton>
+      </DropdownButton> */}
 
       {/* Code */}
       <button
@@ -322,9 +322,9 @@ const TipTap = (props) => {
         alignments: ["left", "center", "right", "justify"],
         defaultAlignment: "justify",
       }),
-      FontFamily.configure({
-        types: ["textStyle"],
-      }),
+      // FontFamily.configure({
+      //   types: ["textStyle"],
+      // }),
     ],
     content: `${props.content}`,
     onUpdate: ({ editor }) => {

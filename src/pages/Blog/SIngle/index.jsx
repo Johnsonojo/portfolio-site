@@ -35,18 +35,17 @@ const SingleArticle = () => {
   const { error, isError, isLoading } = fetchOneArticle;
 
   return (
-    <div className="article-wrapper pt-3">
-      <Container className="pt-2 pb-4">
+    <div className="article-wrapper pt-3 pb-5">
+      <Container>
         <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-10">
-            {" "}
             {isLoading && <div>Loading...</div>}
             {isError && <div>{error}</div>}
             <div className="single-article-wrapper container">
-              <div className="pb-3">
-                <h2 className="article-card-title">
+              <div className="pb-5">
+                <h1 className="article-card-title">
                   {singleArticle?.articleTitle}
-                </h2>
+                </h1>
               </div>
 
               <div className="pb-3">
@@ -92,12 +91,12 @@ const SingleArticle = () => {
             </div>
           ) : null}
         </div>
+        <DeleteArticleModal
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+          slug={singleArticle?.slug}
+        />
       </Container>
-      <DeleteArticleModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-        slug={singleArticle?.slug}
-      />
     </div>
   );
 };

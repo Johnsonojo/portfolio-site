@@ -13,12 +13,10 @@
     padding-top: 1px;
     padding-bottom: 30px;
 
-    h3 {
+    .form-title {
       @include themify($themes) {
         color: themed("colorTextPrimary");
       }
-      font-size: 1.5rem;
-      font-weight: 600;
     }
     .form-container {
       @include themify($themes) {

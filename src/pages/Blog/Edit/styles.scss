@@ -1,0 +1,8 @@
+@import "../../../styles/theme-variables.scss";
+
+.edit-article {
+  @include themify($themes) {
+    background-color: themed("colorBackground");
+    color: themed("colorTextPrimary");
+  }
+}
