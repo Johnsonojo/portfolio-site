@@ -33,9 +33,12 @@ blogAPI.getOneArticle = async (slug) => {
   }
 };
 
-blogAPI.updateArticle = async ({ slug, articleDetails }) => {
+blogAPI.updateArticle = async ({ slug, formData }) => {
   try {
-    const response = await axiosPrivate.put(`articles/${slug}`, articleDetails);
+    const response = await axiosPrivateMultipart.put(
+      `articles/${slug}`,
+      formData
+    );
     const { data } = response;
     return data;
   } catch (error) {
