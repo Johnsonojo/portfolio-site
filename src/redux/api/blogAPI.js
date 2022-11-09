@@ -23,9 +23,9 @@ blogAPI.getAllArticles = async () => {
   }
 };
 
-blogAPI.getOneArticle = async (articleId) => {
+blogAPI.getOneArticle = async (slug) => {
   try {
-    const response = await axiosPrivate.get(`articles/${articleId}`);
+    const response = await axiosPrivate.get(`articles/${slug}`);
     const { data } = response;
     return data;
   } catch (error) {
@@ -33,12 +33,9 @@ blogAPI.getOneArticle = async (articleId) => {
   }
 };
 
-blogAPI.updateArticle = async ({ articleId, articleDetails }) => {
+blogAPI.updateArticle = async ({ slug, articleDetails }) => {
   try {
-    const response = await axiosPrivate.put(
-      `articles/${articleId}`,
-      articleDetails
-    );
+    const response = await axiosPrivate.put(`articles/${slug}`, articleDetails);
     const { data } = response;
     return data;
   } catch (error) {
@@ -46,9 +43,9 @@ blogAPI.updateArticle = async ({ articleId, articleDetails }) => {
   }
 };
 
-blogAPI.deleteArticle = async (articleId) => {
+blogAPI.deleteArticle = async (slug) => {
   try {
-    const response = await axiosPrivate.delete(`articles/${articleId}`);
+    const response = await axiosPrivate.delete(`articles/${slug}`);
     const { data } = response;
     return data;
   } catch (error) {

@@ -18,6 +18,7 @@ import SingleArticle from "./pages/Blog/SIngle";
 import ContactPage from "./pages/Contact";
 import HomePage from "./pages/Homepage";
 import LoginPage from "./pages/Login";
+import { getFromStorage } from "./utils";
 
 const queryClient = new QueryClient();
 
@@ -34,7 +35,7 @@ function App() {
 
   const [theme, setTheme] = useState(getDefaultTheme());
 
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(getFromStorage("user"));
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -55,7 +56,10 @@ function App() {
                   path="/blog/create-article"
                   element={<CreateArticle />}
                 />
-                <Route path="/blog/edit-article" element={<EditArticle />} />
+                <Route
+                  path="/blog/edit-article/:slug"
+                  element={<EditArticle />}
+                />
               </Route>
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

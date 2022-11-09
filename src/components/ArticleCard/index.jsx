@@ -16,7 +16,7 @@ const ArticleCard = ({ article }) => {
         variant="top"
         src={article?.articleImage || codePics}
         alt={article?.articleImage}
-        className="article-image"
+        className="article-image img-fluid"
       />
       <Card.Body className="px-3">
         <Card.Title className="article-card-title">

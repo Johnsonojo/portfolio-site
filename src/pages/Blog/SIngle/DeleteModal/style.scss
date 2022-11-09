@@ -1,0 +1,27 @@
+.action-button-wrapper1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  padding-bottom: 20px;
+
+  button {
+    width: 20%;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+.action-button-wrapper2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+}

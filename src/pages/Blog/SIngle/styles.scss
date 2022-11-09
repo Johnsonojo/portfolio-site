@@ -1,0 +1,21 @@
+@import "../../../styles/theme-variables.scss";
+
+.article-wrapper {
+  @include themify($themes) {
+    background-color: themed("colorBackground");
+    color: themed("colorTextPrimary");
+  }
+  height: 93vh !important;
+
+  section {
+    width: auto;
+  }
+  .action-button-wrapper2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
