@@ -5,6 +5,7 @@ import { FaHome } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../context/theme-context";
+import { getFromStorage } from "../../utils";
 import "./style.scss";
 
 const MainNav = () => {
@@ -15,6 +16,8 @@ const MainNav = () => {
     setTheme(isCurrentDark ? "light" : "dark");
     localStorage.setItem("theme", isCurrentDark ? "light" : "dark");
   };
+
+  const user = JSON.parse(getFromStorage("user"));
 
   return (
     <nav className="navbar navbar-expand-lg main-wrapper">
@@ -43,6 +46,11 @@ const MainNav = () => {
             <li className="nav-item">
               <Link to="/blog">Blog</Link>
             </li>
+            {user.id && (
+              <li className="nav-item">
+                <Link to="/blog/create-article">Create</Link>
+              </li>
+            )}
             <li className="nav-item">
               <Link to="/about">About</Link>
             </li>
