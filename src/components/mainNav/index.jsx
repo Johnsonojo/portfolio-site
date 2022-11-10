@@ -59,6 +59,9 @@ const MainNav = () => {
             </li>
           </ul>
           <div className="d-flex icon-wrapper">
+            <li className="nav-item">
+              <Link to="/blog/search">Search</Link>
+            </li>
             <button type="button" onClick={handleThemeChange}>
               {theme === "light" ? (
                 <BsMoonFill

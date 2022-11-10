@@ -1,0 +1,33 @@
+@import "../../../styles/theme-variables.scss";
+
+.search-article {
+  @include themify($themes) {
+    background-color: themed("colorBackground");
+    color: themed("colorTextPrimary");
+  }
+  height: 100vh !important;
+
+  .input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    input {
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+    button {
+      @include themify($themes) {
+        background-color: themed("colorTextPrimary");
+        color: themed("colorTextTertiary");
+      }
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+    }
+  }
+}
