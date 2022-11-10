@@ -14,6 +14,7 @@ import AboutPage from "./pages/About";
 import AllBlog from "./pages/Blog/All";
 import CreateArticle from "./pages/Blog/Create";
 import EditArticle from "./pages/Blog/Edit";
+import SearchPage from "./pages/Blog/Search";
 import SingleArticle from "./pages/Blog/SIngle";
 import ContactPage from "./pages/Contact";
 import HomePage from "./pages/Homepage";
@@ -46,6 +47,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/blog" element={<AllBlog />} />
+              <Route path="/blog/search" element={<SearchPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/blog/:slug" element={<SingleArticle />} />

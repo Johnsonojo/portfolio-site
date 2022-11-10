@@ -3,6 +3,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import { useQuery, useQueryClient } from "react-query";
+import { useNavigate } from "react-router-dom";
 import ArticleCard from "../../../components/ArticleCard";
 import blogAPI from "../../../redux/api/blogAPI";
 import queryKeys from "../../../redux/api/queryKeys";
@@ -10,7 +11,7 @@ import "./style.scss";
 
 const AllBlog = () => {
   const [allArticles, setAllArticles] = useState([]);
-
+  const navigate = useNavigate();
   const queryClient = useQueryClient();
 
   const allBlogArticles = useQuery(
@@ -32,7 +33,12 @@ const AllBlog = () => {
 
   return (
     <div className="articles-wrapper">
-      <h2 className="text-center fw-bold py-5">Blog Posts</h2>
+      <div className="top-wrapper container">
+        <div>
+          <h2 className="fw-bold py-5">Blog Posts</h2>
+        </div>
+        <button onClick={() => navigate("/blog/search")}>Search</button>
+      </div>
 
       <Container>
         {allArticles?.length === 0 ? (
