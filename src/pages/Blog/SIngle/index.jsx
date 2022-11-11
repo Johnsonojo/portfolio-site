@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
 import { FiEdit } from "react-icons/fi";
 import { IoTrashOutline } from "react-icons/io5";
 import { useQuery, useQueryClient } from "react-query";
@@ -36,12 +34,12 @@ const SingleArticle = () => {
 
   return (
     <div className="article-wrapper pt-3 pb-5">
-      <Container>
-        <div className="row">
+      <div className="container">
+        <div className="row mt-4 pb-5">
           <div className="col-sm-12 col-md-12 col-lg-10">
             {isLoading && <div>Loading...</div>}
             {isError && <div>{error}</div>}
-            <div className="single-article-wrapper container">
+            <div className="single-article-wrapper">
               <div className="pb-5">
                 <h1 className="article-card-title">
                   {singleArticle?.articleTitle}
@@ -73,20 +71,20 @@ const SingleArticle = () => {
           {user?.id ? (
             <div className="col-sm-12 col-md-12 col-lg-2">
               <div className="action-button-wrapper2">
-                <Button
-                  variant="outline-success"
+                <button
+                  className="btn btn-outline-success"
                   onClick={() =>
                     (window.location = `/blog/edit-article/${singleArticle?.slug}`)
                   }
                 >
                   <FiEdit />
-                </Button>
-                <Button
-                  variant="outline-danger"
+                </button>
+                <button
+                  className="btn btn-outline-danger"
                   onClick={() => setModalShow(true)}
                 >
                   <IoTrashOutline />
-                </Button>
+                </button>
               </div>
             </div>
           ) : null}
@@ -96,7 +94,7 @@ const SingleArticle = () => {
           onHide={() => setModalShow(false)}
           slug={singleArticle?.slug}
         />
-      </Container>
+      </div>
     </div>
   );
 };
