@@ -18,10 +18,14 @@ const MainNav = () => {
   };
 
   const user = JSON.parse(getFromStorage("user"));
-
+  // const user = JSON.parse(localStorage.getItem("user"));
+  const logout = () => {
+    localStorage.clear();
+    window.location.replace("/");
+  };
   return (
     <nav className="navbar navbar-expand-lg main-wrapper">
-      <div className="container">
+      <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <FaHome />
         </Link>
@@ -46,7 +50,7 @@ const MainNav = () => {
             <li className="nav-item">
               <Link to="/blog">Blog</Link>
             </li>
-            {user.id && (
+            {user?.id && (
               <li className="nav-item">
                 <Link to="/blog/create-article">Create</Link>
               </li>
@@ -58,27 +62,35 @@ const MainNav = () => {
               <Link to="/contact">Contacts</Link>
             </li>
           </ul>
-          <div className="d-flex icon-wrapper">
-            <li className="nav-item">
-              <Link to="/blog/search">Search</Link>
-            </li>
-            <button type="button" onClick={handleThemeChange}>
-              {theme === "light" ? (
-                <BsMoonFill
-                  style={{
-                    color: "black",
-                    background: "none",
-                  }}
-                />
-              ) : (
-                <FiSun
-                  style={{
-                    color: "white",
-                    background: "none",
-                  }}
-                />
-              )}
-            </button>
+          <div className="left-wrapper">
+            <div>
+              <li className="nav-item">
+                <Link to="/blog/search">Search</Link>
+              </li>
+            </div>
+            <div>
+              <button type="button" onClick={handleThemeChange}>
+                {theme === "light" ? (
+                  <BsMoonFill
+                    style={{
+                      color: "black",
+                      background: "none",
+                    }}
+                  />
+                ) : (
+                  <FiSun
+                    style={{
+                      color: "white",
+                      background: "none",
+                    }}
+                  />
+                )}
+              </button>
+            </div>
+
+            <div>
+              {user?.id ? <button onClick={logout}>Logout</button> : null}
+            </div>
           </div>
         </div>
       </div>
