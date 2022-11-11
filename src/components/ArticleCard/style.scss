@@ -17,31 +17,41 @@
     transition: box-shadow 0.3s ease-in-out;
   }
 
-  .article-image {
-    height: -webkit-fill-available !important;
+  .card-img-top {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
   }
-  .article-card-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px !important;
-  }
-
-  .tags {
-    margin-bottom: 15px;
+  .card-body {
     display: flex;
-
-    .tag-badge {
-      @include themify($themes) {
-        background-color: themed("tagBadgeBackground");
-        color: themed("tagBadgeColor");
-      }
-      margin-right: 10px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 500;
+    flex-direction: column;
+    justify-content: space-between;
+    .article-card-title {
+      font-size: 1.5rem;
+      margin-bottom: 20px !important;
+      text-align: start;
     }
-  }
-  .read-more {
-    font-size: 16px;
-    font-weight: 600;
+
+    .tags {
+      margin-bottom: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .tag-badge {
+        @include themify($themes) {
+          background-color: themed("tagBadgeBackground");
+          color: themed("tagBadgeColor");
+        }
+        margin-right: 10px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+    .read-more {
+      font-size: 16px;
+      font-weight: 600;
+    }
   }
 }

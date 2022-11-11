@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import { useQuery, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
 import ArticleCard from "../../../components/ArticleCard";
@@ -40,25 +37,25 @@ const AllBlog = () => {
         <button onClick={() => navigate("/blog/search")}>Search</button>
       </div>
 
-      <Container>
+      <div className="container">
         {allArticles?.length === 0 ? (
-          <Row>
+          <div className="row">
             <div className="text-center">
               <h3>Available shortly</h3>
             </div>
-          </Row>
+          </div>
         ) : (
-          <Row xs={1} md={2} className="g-6">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             {allArticles?.map((article) => (
-              <Col xs={12} md={6} lg={4} key={article?.id} className="mb-4">
+              <div className="col mb-4" key={article?.id}>
                 {isLoading && <div>Loading...</div>}
                 {isError && <div>{error}</div>}
                 <ArticleCard article={article} />
-              </Col>
+              </div>
             ))}
-          </Row>
+          </div>
         )}
-      </Container>
+      </div>
     </div>
   );
 };
