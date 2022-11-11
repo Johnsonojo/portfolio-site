@@ -47,7 +47,7 @@ const AllBlog = () => {
         ) : (
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             {allArticles?.map((article) => (
-              <div className="col mb-4">
+              <div className="col mb-4" key={article?.id}>
                 {isLoading && <div>Loading...</div>}
                 {isError && <div>{error}</div>}
                 <ArticleCard article={article} />
