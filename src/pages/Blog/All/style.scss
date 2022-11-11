@@ -1,11 +1,12 @@
 @import "../../../styles/theme-variables.scss";
 
 .articles-wrapper {
+  min-height: 100vh !important;
+
   @include themify($themes) {
     background-color: themed("colorBackground");
     color: themed("colorTextPrimary");
   }
-  height: 100vh !important;
 
   .top-wrapper {
     display: flex;
