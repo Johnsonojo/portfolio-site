@@ -5,5 +5,7 @@ const queryKeys = {
   deleteArticle: "deleteArticle",
   createArticle: "createArticle",
   searchArticles: "searchArticles",
+  getAllTags: "getAllTags",
+  getAllArticlesByTag: "getAllArticlesByTag",
 };
 export default queryKeys;
