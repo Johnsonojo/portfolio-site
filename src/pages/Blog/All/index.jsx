@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
-import { useNavigate } from "react-router-dom";
 import ArticleCard from "../../../components/ArticleCard";
 import blogAPI from "../../../redux/api/blogAPI";
 import queryKeys from "../../../redux/api/queryKeys";
@@ -8,7 +7,6 @@ import "./style.scss";
 
 const AllBlog = () => {
   const [allArticles, setAllArticles] = useState([]);
-  const navigate = useNavigate();
   const queryClient = useQueryClient();
 
   const allBlogArticles = useQuery(
@@ -32,9 +30,9 @@ const AllBlog = () => {
     <div className="articles-wrapper">
       <div className="top-wrapper container">
         <div>
-          <h2 className="fw-bold py-5">Blog Posts</h2>
+          <h3 className="fw-bold py-5">Blog Posts</h3>
         </div>
-        <button onClick={() => navigate("/blog/search")}>Search</button>
+        <div></div>
       </div>
 
       <div className="container">

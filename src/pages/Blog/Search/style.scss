@@ -5,7 +5,7 @@
     background-color: themed("colorBackground");
     color: themed("colorTextPrimary");
   }
-  height: 100vh !important;
+  min-height: 100vh !important;
 
   .input-group {
     display: flex;
@@ -26,6 +26,28 @@
       border-radius: 8px;
       padding: 5px 10px;
       font-size: 18px;
+      cursor: pointer;
+      border: none;
+    }
+  }
+
+  .tag-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    button {
+      @include themify($themes) {
+        background-color: themed("colorTextPrimary");
+        color: themed("colorTextTertiary");
+      }
+      margin: 5px;
+      padding: 5px 10px;
+      border-radius: 8px;
       cursor: pointer;
       border: none;
     }

@@ -18,10 +18,9 @@ const MainNav = () => {
   };
 
   const user = JSON.parse(getFromStorage("user"));
-  // const user = JSON.parse(localStorage.getItem("user"));
   const logout = () => {
     localStorage.clear();
-    window.location.replace("/");
+    window.location.replace("/blog");
   };
   return (
     <nav className="navbar navbar-expand-lg main-wrapper">
@@ -88,8 +87,12 @@ const MainNav = () => {
               </button>
             </div>
 
-            <div>
-              {user?.id ? <button onClick={logout}>Logout</button> : null}
+            <div className="logout">
+              {user?.id ? (
+                <button type="button" onClick={logout}>
+                  Logout
+                </button>
+              ) : null}
             </div>
           </div>
         </div>
