@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
 import ArticleCard from "../../../components/ArticleCard";
+import PageMeta from "../../../components/RenderPageMeta";
 import blogAPI from "../../../redux/api/blogAPI";
 import queryKeys from "../../../redux/api/queryKeys";
 import "./style.scss";
@@ -28,6 +29,12 @@ const AllBlog = () => {
 
   return (
     <div className="articles-wrapper">
+      <PageMeta
+        metalTitle="Blog | Johnsonojo"
+        metaName="description"
+        metaContent="Johnson Ojo's personal website"
+      />
+
       <div className="top-wrapper container">
         <div>
           <h3 className="fw-bold py-5">Blog Posts</h3>

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
 import ArticleCard from "../../../components/ArticleCard";
+import PageMeta from "../../../components/RenderPageMeta";
 import queryKeys from "../../../redux/api/queryKeys";
 import searchAPI from "../../../redux/api/searchAPI";
 import tagAPI from "../../../redux/api/tagAPI";
@@ -126,6 +127,7 @@ const SearchPage = () => {
   const renderArticlesSearchedByTag = () => {
     return (
       <div className="container">
+        <h4 className="text-center mb-5">Articles tagged "{tagName}"</h4>
         <div className="row g-6 mt-2">
           {tagSearchIsLoading && <h3 className="text-center">Searching...</h3>}
           {allArticlesByTag?.map((article) => (
@@ -141,6 +143,11 @@ const SearchPage = () => {
 
   return (
     <div className="search-article">
+      <PageMeta
+        metalTitle="Search"
+        metaName="description"
+        metaContent="Search for contents in the blog using keywords"
+      />
       <h1 className="text-center pt-3">Search Articles</h1>
       <div className="container col-sm-12 col-md-6 py-5">
         <div className="input-group">
