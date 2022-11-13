@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
+import { HelmetProvider } from "react-helmet-async";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -40,36 +41,38 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeContext.Provider value={{ theme, setTheme }}>
-        <BrowserRouter>
-          <div className={`theme-${theme}`}>
-            <MainNav />
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/blog" element={<AllBlog />} />
-              <Route path="/blog/search" element={<SearchPage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/blog/:slug" element={<SingleArticle />} />
-              <Route path="/login" element={<LoginPage />} />
+      <HelmetProvider>
+        <ThemeContext.Provider value={{ theme, setTheme }}>
+          <BrowserRouter>
+            <div className={`theme-${theme}`}>
+              <MainNav />
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/blog" element={<AllBlog />} />
+                <Route path="/blog/search" element={<SearchPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/blog/:slug" element={<SingleArticle />} />
+                <Route path="/login" element={<LoginPage />} />
 
-              <Route element={<ProtectedRoute user={user?.id} />}>
-                <Route
-                  path="/blog/create-article"
-                  element={<CreateArticle />}
-                />
-                <Route
-                  path="/blog/edit-article/:slug"
-                  element={<EditArticle />}
-                />
-              </Route>
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-            <ToastContainer />
-          </div>
-        </BrowserRouter>
-        <ReactQueryDevtools initialIsOpen={false} />
-      </ThemeContext.Provider>
+                <Route element={<ProtectedRoute user={user?.id} />}>
+                  <Route
+                    path="/blog/create-article"
+                    element={<CreateArticle />}
+                  />
+                  <Route
+                    path="/blog/edit-article/:slug"
+                    element={<EditArticle />}
+                  />
+                </Route>
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+              <ToastContainer />
+            </div>
+          </BrowserRouter>
+          <ReactQueryDevtools initialIsOpen={false} />
+        </ThemeContext.Provider>
+      </HelmetProvider>
     </QueryClientProvider>
   );
 }
