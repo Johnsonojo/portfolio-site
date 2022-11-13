@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { IoTrashOutline } from "react-icons/io5";
 import { useQuery, useQueryClient } from "react-query";
 import { useParams } from "react-router-dom";
 import logo1 from "../../../assets/images/code.jpg";
 import AuthorCard from "../../../components/AuthorCard";
+import PageMeta from "../../../components/RenderPageMeta";
 import blogAPI from "../../../redux/api/blogAPI";
 import queryKeys from "../../../redux/api/queryKeys";
 import { getFromStorage } from "../../../utils";
@@ -35,6 +36,11 @@ const SingleArticle = () => {
 
   return (
     <div className="article-wrapper pt-3 pb-5">
+      <PageMeta
+        metalTitle={singleArticle?.articleTitle}
+        metaName="description"
+        metaContent={singleArticle?.articleBody?.slice(0, 150)}
+      />
       <div className="container">
         <div className="row mt-4 pb-5">
           <div className="col-sm-12 col-md-12 col-lg-9">

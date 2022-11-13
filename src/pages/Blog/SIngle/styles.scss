@@ -6,6 +6,8 @@
     color: themed("colorTextPrimary");
   }
 
+  min-height: 100vh !important;
+
   .single-article-wrapper {
     img {
       border-radius: 10px;
