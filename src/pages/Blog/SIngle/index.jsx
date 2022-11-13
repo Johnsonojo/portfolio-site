@@ -4,6 +4,7 @@ import { IoTrashOutline } from "react-icons/io5";
 import { useQuery, useQueryClient } from "react-query";
 import { useParams } from "react-router-dom";
 import logo1 from "../../../assets/images/code.jpg";
+import AuthorCard from "../../../components/AuthorCard";
 import blogAPI from "../../../redux/api/blogAPI";
 import queryKeys from "../../../redux/api/queryKeys";
 import { getFromStorage } from "../../../utils";
@@ -36,14 +37,18 @@ const SingleArticle = () => {
     <div className="article-wrapper pt-3 pb-5">
       <div className="container">
         <div className="row mt-4 pb-5">
-          <div className="col-sm-12 col-md-12 col-lg-10">
+          <div className="col-sm-12 col-md-12 col-lg-9">
             {isLoading && <div>Loading...</div>}
             {isError && <div>{error}</div>}
             <div className="single-article-wrapper">
-              <div className="pb-5">
+              <div className="pb-3">
                 <h1 className="article-card-title">
                   {singleArticle?.articleTitle}
                 </h1>
+              </div>
+
+              <div className="pb-3">
+                <AuthorCard article={singleArticle} />
               </div>
 
               <div className="pb-3">
