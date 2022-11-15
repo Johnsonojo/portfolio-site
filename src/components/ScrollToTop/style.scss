@@ -1,0 +1,24 @@
+.top-btn-position {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+}
+
+.top-btn-style {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  background-color: #fff;
+  color: #333;
+  padding: 8px;
+  cursor: pointer;
+
+  &:hover {
+    animation: none;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #fff;
+    transition: all 0.3s ease-in-out;
+  }
+}
