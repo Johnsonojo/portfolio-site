@@ -55,18 +55,10 @@ const MainNav = () => {
               </li>
             )}
             <li className="nav-item">
-              <Link to="/about">About</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/contact">Contacts</Link>
+              <Link to="/blog/search">Search</Link>
             </li>
           </ul>
           <div className="left-wrapper">
-            <div>
-              <li className="nav-item">
-                <Link to="/blog/search">Search</Link>
-              </li>
-            </div>
             <div>
               <button type="button" onClick={handleThemeChange}>
                 {theme === "light" ? (
