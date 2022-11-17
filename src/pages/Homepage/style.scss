@@ -1,0 +1,78 @@
+@import "../../styles/theme-variables.scss";
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 30px;
+
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+
+    h1 {
+      @include themify($themes) {
+        color: themed("colorTextPrimary");
+      }
+      font-size: 4.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      @include themify($themes) {
+        color: themed("heroTextColor");
+      }
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    h5 {
+      @include themify($themes) {
+        color: themed("colorTextSecondary");
+      }
+      font-size: 1rem;
+    }
+
+    .link-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+      padding: 0px;
+
+      p {
+        @include themify($themes) {
+          color: themed("colorTextPrimary");
+        }
+
+        list-style: none;
+        margin: 0 10px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        display: inline;
+
+        &:hover {
+          color: #f5a623;
+        }
+      }
+    }
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    min-height: 85vh;
+  }
+}
