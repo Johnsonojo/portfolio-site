@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 import PageMeta from "../../components/RenderPageMeta";
 import ScrollToTop from "../../components/ScrollToTop";
 import StackCard from "../../components/StackCard";
@@ -10,7 +11,23 @@ const HomePage = () => {
   const contact = useRef(null);
   const techStack = useRef(null);
 
-  const { frontend, backend, deployment, testing } = stackData;
+  const [text] = useTypewriter({
+    loop: {},
+    typeSpeed: 50,
+    // delaySpeed: 1000,
+    // cursor: "|",
+    words: ["Software Developer", "Content Writer", "Blockchain Enthusiast"],
+  });
+
+  const {
+    frontend,
+    backend,
+    deployment,
+    testing,
+    programmingLanguages,
+    others,
+  } = stackData;
+
   const scrollToSection = (ref) => {
     window.scrollTo({
       top: ref.current.offsetTop,
@@ -31,16 +48,21 @@ const HomePage = () => {
         <div>
           <h5>🖐 Hi, my name is</h5>
         </div>
-
         <div>
           <h1>Johnson Ojo</h1>
         </div>
-
         <div>
-          <h3>
-            A software developer who is passionate about building things for the
-            web.
-          </h3>
+          <h2>
+            <span> {" < "}</span> I am a{" "}
+            <span>
+              {text}
+              <span>
+                <Cursor />
+              </span>
+              <span> {" /> "}</span>
+            </span>
+          </h2>
+          <h3>And I am passionate about building things for the web.</h3>
         </div>
         <div className="link-wrapper">
           <p onClick={() => scrollToSection(techStack)}>Tech stack</p>
@@ -51,6 +73,7 @@ const HomePage = () => {
 
       <div className="container my-5 section" ref={techStack}>
         <h1>Tech Stack</h1>
+        <h5>Here are some of the technologies I have experience using:</h5>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 tech-stack">
           <div>
             <StackCard stackList={frontend} title="Frontend" />
@@ -66,6 +89,14 @@ const HomePage = () => {
 
           <div>
             <StackCard stackList={testing} title="Testing" />
+          </div>
+
+          <div>
+            <StackCard stackList={programmingLanguages} title="Languages" />
+          </div>
+
+          <div>
+            <StackCard stackList={others} title="Others" />
           </div>
         </div>
       </div>
