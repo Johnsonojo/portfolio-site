@@ -7,9 +7,11 @@
   padding: 10px;
   border-radius: 10px;
 
+  &:hover {
+  }
   h4 {
     @include themify($themes) {
-      color: themed("inputTextColor");
+      color: themed("colorTextPrimary");
     }
   }
 
