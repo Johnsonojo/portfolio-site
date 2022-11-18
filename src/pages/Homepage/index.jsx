@@ -16,7 +16,8 @@ const HomePage = () => {
     typeSpeed: 50,
     // delaySpeed: 1000,
     // cursor: "|",
-    words: ["Software Developer", "Content Writer", "Blockchain Enthusiast"],
+    words: ["Software Developer", "Blockchain Enthusiast"],
+    // words: ["Software Developer", "Content Writer", "Blockchain Enthusiast"],
   });
 
   const {
