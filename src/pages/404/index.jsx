@@ -9,7 +9,10 @@ const NotFoundPage = () => (
         🤷🏾‍♂️
       </span>
     </h2>
-    <Button variant="outline-dark" onClick={() => window.location.replace("/")}>
+    <Button
+      variant="outline-dark"
+      onClick={() => window.location.replace("/blog")}
+    >
       Go Back Home
     </Button>
   </div>

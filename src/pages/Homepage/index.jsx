@@ -14,10 +14,8 @@ const HomePage = () => {
   const [text] = useTypewriter({
     loop: {},
     typeSpeed: 50,
-    // delaySpeed: 1000,
-    // cursor: "|",
-    words: ["Software Developer", "Blockchain Enthusiast"],
-    // words: ["Software Developer", "Content Writer", "Blockchain Enthusiast"],
+    delaySpeed: 1500,
+    words: ["Software Developer", "Content Writer", "Blockchain Enthusiast"],
   });
 
   const {

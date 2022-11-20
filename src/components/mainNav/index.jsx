@@ -22,6 +22,7 @@ const MainNav = () => {
     localStorage.clear();
     window.location.replace("/blog");
   };
+
   return (
     <nav className="navbar navbar-expand-lg main-wrapper">
       <div className="container-fluid">
@@ -37,26 +38,30 @@ const MainNav = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon">
-            <AiOutlineMenu />
-          </span>
+          {theme === "dark" ? (
+            <span className="navbar-toggler-icon">
+              {<AiOutlineMenu size={"28px"} />}
+            </span>
+          ) : (
+            <span className="navbar-toggler-icon"></span>
+          )}
         </button>
         <div className="collapse navbar-collapse me-auto" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link to="/">Home</Link>
             </li>
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <Link to="/blog">Blog</Link>
-            </li> */}
-            {/* {user?.id && (
+            </li>
+            {user?.id && (
               <li className="nav-item">
                 <Link to="/blog/create-article">Create</Link>
               </li>
-            )} */}
-            {/* <li className="nav-item">
+            )}
+            <li className="nav-item">
               <Link to="/blog/search">Search</Link>
-            </li> */}
+            </li>
           </ul>
           <div className="left-wrapper">
             <div>

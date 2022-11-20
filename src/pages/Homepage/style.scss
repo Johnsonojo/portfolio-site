@@ -71,15 +71,13 @@
   .section {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
     min-height: 85vh;
+    padding: 20px;
 
     h5 {
       @include themify($themes) {
         color: themed("heroTextColor");
       }
-      // font-size: 1.5rem;
       margin-bottom: 1rem;
     }
   }

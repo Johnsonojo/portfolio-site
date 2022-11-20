@@ -8,19 +8,17 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.scss";
 import MainNav from "./components/mainNav";
-// import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { ThemeContext } from "./context/theme-context";
 import NotFoundPage from "./pages/404";
-// import AboutPage from "./pages/About";
-// import AllBlog from "./pages/Blog/All";
-// import CreateArticle from "./pages/Blog/Create";
-// import EditArticle from "./pages/Blog/Edit";
-// import SearchPage from "./pages/Blog/Search";
-// import SingleArticle from "./pages/Blog/SIngle";
-// import ContactPage from "./pages/Contact";
+import AllBlog from "./pages/Blog/All";
+import CreateArticle from "./pages/Blog/Create";
+import EditArticle from "./pages/Blog/Edit";
+import SearchPage from "./pages/Blog/Search";
+import SingleArticle from "./pages/Blog/SIngle";
 import HomePage from "./pages/Homepage";
-// import LoginPage from "./pages/Login";
-// import { getFromStorage } from "./utils";
+import LoginPage from "./pages/Login";
+import { getFromStorage } from "./utils";
 
 const queryClient = new QueryClient();
 
@@ -37,7 +35,7 @@ function App() {
 
   const [theme, setTheme] = useState(getDefaultTheme());
 
-  // const user = JSON.parse(getFromStorage("user"));
+  const user = JSON.parse(getFromStorage("user"));
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -48,14 +46,12 @@ function App() {
               <MainNav />
               <Routes>
                 <Route path="/" element={<HomePage />} />
-                {/* <Route path="/blog" element={<AllBlog />} /> */}
-                {/* <Route path="/blog/search" element={<SearchPage />} /> */}
-                {/* <Route path="/about" element={<AboutPage />} /> */}
-                {/* <Route path="/contact" element={<ContactPage />} /> */}
-                {/* <Route path="/blog/:slug" element={<SingleArticle />} /> */}
-                {/* <Route path="/login" element={<LoginPage />} /> */}
+                <Route path="/blog" element={<AllBlog />} />
+                <Route path="/blog/search" element={<SearchPage />} />
+                <Route path="/blog/:slug" element={<SingleArticle />} />
+                <Route path="/login" element={<LoginPage />} />
 
-                {/* <Route element={<ProtectedRoute user={user?.id} />}>
+                <Route element={<ProtectedRoute user={user?.id} />}>
                   <Route
                     path="/blog/create-article"
                     element={<CreateArticle />}
@@ -64,7 +60,7 @@ function App() {
                     path="/blog/edit-article/:slug"
                     element={<EditArticle />}
                   />
-                </Route> */}
+                </Route>
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
               <ToastContainer />
