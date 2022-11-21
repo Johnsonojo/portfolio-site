@@ -22,7 +22,6 @@ const StackCard = ({ stackList, title }) => {
               color: `${stack?.color}`,
               backgroundColor: `${stack?.background}`,
               borderRadius: "5px",
-              transition: "all 0.5s ease-in-out",
             }}
             // style={{
             //   color: isHovering ? `${stack?.color}` : "",
