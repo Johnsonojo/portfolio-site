@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsMoonFill } from "react-icons/bs";
-import { FaHome } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import logo from "../../assets/images/logo192.png";
 import { ThemeContext } from "../../context/theme-context";
 import { getFromStorage } from "../../utils";
 import "./style.scss";
@@ -27,7 +27,11 @@ const MainNav = () => {
     <nav className="navbar navbar-expand-lg main-wrapper">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <FaHome />
+          <img
+            src={logo}
+            alt="logo"
+            style={{ width: "30px", height: "30px" }}
+          />
         </Link>
         <button
           className="navbar-toggler"
