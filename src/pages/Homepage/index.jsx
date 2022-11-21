@@ -1,8 +1,10 @@
 import { useRef } from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
+import ProjectCard from "../../components/ProjectCard";
 import PageMeta from "../../components/RenderPageMeta";
 import ScrollToTop from "../../components/ScrollToTop";
 import StackCard from "../../components/StackCard";
+import { projectData } from "../../constants/projectData";
 import { stackData } from "../../constants/stackData";
 import "./style.scss";
 
@@ -100,7 +102,15 @@ const HomePage = () => {
         </div>
       </div>
       <div className="container my-5 section" ref={projects}>
-        <h1>Projects</h1>
+        <h1 className="pb-4">Projects</h1>
+
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          {projectData?.map((project) => (
+            <div className="col mb-4" key={project?.id}>
+              <ProjectCard key={project.id} project={project} />
+            </div>
+          ))}
+        </div>
       </div>
       <div className="container my-5 section" ref={contact}>
         <h1>Contact</h1>
