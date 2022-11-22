@@ -18,14 +18,18 @@
       @include themify($themes) {
         color: themed("editorButtonColor") !important;
       }
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: none;
       background-color: #fff !important;
       cursor: pointer;
       padding: 0.5rem;
       border-radius: 0.25rem;
       transition: all 0.2s ease-in-out;
-      font-size: 16px;
-      outline: none;
+      height: 30px !important;
+      font-size: 23px !important;
+      margin: 10px 10px 0px 0px !important;
 
       &:hover {
         @include themify($themes) {
@@ -109,10 +113,10 @@
       font-size: 18px;
 
       code {
-        color: inherit;
+        // color: inherit;
         padding: 0;
         background: none;
-        font-size: 0.8rem;
+        // font-size: 0.8rem;
       }
     }
 
