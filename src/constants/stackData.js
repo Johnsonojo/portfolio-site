@@ -84,13 +84,13 @@ export const stackData = {
       color: "#02569b",
       background: "#e6f4fe",
     },
-    // {
-    //   id: 14,
-    //   name: "Next.js",
-    //   icon: "next-dot-js",
-    //   color: "#000",
-    //   background: "#fff",
-    // },
+    {
+      id: 14,
+      name: "Angular",
+      icon: "angular",
+      color: "#dd0031",
+      background: "#ffeef0",
+    },
   ],
   backend: [
     {
@@ -149,13 +149,6 @@ export const stackData = {
       color: "#000",
       background: "#fff",
     },
-    // {
-    //   id: 9,
-    //   name: "GraphQL",
-    //   icon: "graphql",
-    //   color: "#e535ab",
-    //   background: "#ffe6f2",
-    // },
   ],
   deployment: [
     {
@@ -311,26 +304,5 @@ export const stackData = {
       color: "#0079bf",
       background: "#e6f4fe",
     },
-    // {
-    //   id: 4,
-    //   name: "Slack",
-    //   icon: "slack",
-    //   color: "#4a154b",
-    //   background: "#f3e8fd",
-    // },
-    // {
-    //   id: 5,
-    //   name: "Discord",
-    //   icon: "discord",
-    //   color: "#7289da",
-    //   background: "#e6f4fe",
-    // },
-    // {
-    //   id: 6,
-    //   name: "Zoom",
-    //   icon: "zoom",
-    //   color: "#2d8cff",
-    //   background: "#e6f4fe",
-    // },
   ],
 };
