@@ -5,7 +5,7 @@ import "./style.scss";
 
 const AuthorCard = ({ article }) => {
   return (
-    <div className="main-wrapper">
+    <div>
       <div className="profile-wrapper">
         <img className="profile-image" src={pics} alt="profile" />
         <div className="profile-detail">

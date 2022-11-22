@@ -1,15 +1,14 @@
-// import FontFamily from "@tiptap/extension-font-family";
-// import Dropdown from "react-bootstrap/Dropdown";
-// import DropdownButton from "react-bootstrap/DropdownButton";
+import Link from "@tiptap/extension-link";
 import TextAlign from "@tiptap/extension-text-align";
 import TextStyle from "@tiptap/extension-text-style";
 import Underline from "@tiptap/extension-underline";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import React from "react";
-import { BiCodeBlock, BiParagraph } from "react-icons/bi";
+import React, { useCallback } from "react";
+import { AiOutlineRedo, AiOutlineUndo } from "react-icons/ai";
+import { BiCodeBlock, BiLink, BiParagraph, BiUnlink } from "react-icons/bi";
 import { BsJustify } from "react-icons/bs";
-import { FaListOl, FaListUl, FaRedo, FaUndo } from "react-icons/fa";
+import { FaListOl, FaListUl } from "react-icons/fa";
 import {
   TbAlignCenter,
   TbAlignLeft,
@@ -29,8 +28,26 @@ import {
 } from "react-icons/tb";
 import { VscHorizontalRule } from "react-icons/vsc";
 import "./style.scss";
+import CodeBlock from "@tiptap/extension-code-block";
 
 const MenuBar = ({ editor }) => {
+  const setLink = useCallback(() => {
+    const previousUrl = editor.getAttributes("link").href;
+    const url = window.prompt("URL", previousUrl);
+
+    // cancelled
+    if (url === null) {
+      return;
+    }
+    // empty
+    if (url === "") {
+      editor.chain().focus().extendMarkRange("link").unsetLink().run();
+      return;
+    }
+    // update link
+    editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
+  }, [editor]);
+
   if (!editor) {
     return null;
   }
@@ -133,63 +150,21 @@ const MenuBar = ({ editor }) => {
         <FaListOl />
       </button>
 
-      {/* Fonts */}
-      {/* <DropdownButton
-        id="dropdown-item-button"
-        title="Select Font"
-        variant="dark"
+      {/* Add Link */}
+      <button
+        onClick={setLink}
+        className={editor.isActive("link") ? "is-active" : ""}
       >
-        <Dropdown.Item
-          as="button"
-          type="button"
-          onClick={() => editor.chain().focus().setFontFamily("Inter").run()}
-          className={
-            editor.isActive("textStyle", { fontFamily: "Inter" })
-              ? "is-active"
-              : ""
-          }
-        >
-          Inter
-        </Dropdown.Item>
-        <Dropdown.Item
-          as="button"
-          type="button"
-          onClick={() => editor.chain().focus().setFontFamily("serif").run()}
-          className={
-            editor.isActive("textStyle", { fontFamily: "serif" })
-              ? "is-active"
-              : ""
-          }
-        >
-          Serif
-        </Dropdown.Item>
-        <Dropdown.Item
-          as="button"
-          type="button"
-          onClick={() =>
-            editor.chain().focus().setFontFamily("monospace").run()
-          }
-          className={
-            editor.isActive("textStyle", { fontFamily: "monospace" })
-              ? "is-active"
-              : ""
-          }
-        >
-          Monospace
-        </Dropdown.Item>
-        <Dropdown.Item
-          as="button"
-          type="button"
-          onClick={() => editor.chain().focus().setFontFamily("cursive").run()}
-          className={
-            editor.isActive("textStyle", { fontFamily: "cursive" })
-              ? "is-active"
-              : ""
-          }
-        >
-          Cursive
-        </Dropdown.Item>
-      </DropdownButton> */}
+        <BiLink />
+      </button>
+
+      {/* Remove Link */}
+      <button
+        onClick={() => editor.chain().focus().unsetLink().run()}
+        disabled={!editor.isActive("link")}
+      >
+        <BiUnlink />
+      </button>
 
       {/* Code */}
       <button
@@ -296,7 +271,7 @@ const MenuBar = ({ editor }) => {
         onClick={() => editor.chain().focus().undo().run()}
         disabled={!editor.can().chain().focus().undo().run()}
       >
-        <FaUndo />
+        <AiOutlineUndo />
       </button>
 
       {/* Redo */}
@@ -305,7 +280,7 @@ const MenuBar = ({ editor }) => {
         onClick={() => editor.chain().focus().redo().run()}
         disabled={!editor.can().chain().focus().redo().run()}
       >
-        <FaRedo />
+        <AiOutlineRedo />
       </button>
     </div>
   );
@@ -322,9 +297,17 @@ const TipTap = (props) => {
         alignments: ["left", "center", "right", "justify"],
         defaultAlignment: "justify",
       }),
-      // FontFamily.configure({
-      //   types: ["textStyle"],
-      // }),
+      Link.configure({
+        openOnClick: false,
+        protocols: ["http", "https", "mailto", "tel", "ftp"],
+        autolink: false,
+        linkOnPaste: false,
+      }),
+      CodeBlock.configure({
+        languageClassPrefix: "language-",
+        exitOnArrowDown: true,
+        exitOnTripleEnter: false,
+      }),
     ],
     content: `${props.content}`,
     onUpdate: ({ editor }) => {
