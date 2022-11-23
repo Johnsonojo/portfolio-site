@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import logo1 from "../../../assets/images/code.jpg";
 import AuthorCard from "../../../components/AuthorCard";
 import PageMeta from "../../../components/RenderPageMeta";
+import SingleViewEditor from "../../../components/SingleViewEditor";
 import blogAPI from "../../../redux/api/blogAPI";
 import queryKeys from "../../../redux/api/queryKeys";
 import { getFromStorage } from "../../../utils";
@@ -20,7 +21,7 @@ const SingleArticle = () => {
 
   const user = JSON.parse(getFromStorage("user"));
 
-  const fetchOneArticle = useQuery(
+  const { error, isError, isLoading } = useQuery(
     [queryKeys.getOneArticle, slug],
     () => blogAPI.getOneArticle(slug),
     {
@@ -32,7 +33,6 @@ const SingleArticle = () => {
       },
     }
   );
-  const { error, isError, isLoading } = fetchOneArticle;
 
   return (
     <div className="article-wrapper pt-3 pb-5">
@@ -47,7 +47,7 @@ const SingleArticle = () => {
             {isLoading && <div>Loading...</div>}
             {isError && <div>{error}</div>}
             <div className="single-article-wrapper">
-              <div className="pb-3">
+              <div className="col-lg-9 pb-3">
                 <h1 className="article-card-title">
                   {singleArticle?.articleTitle}
                 </h1>
@@ -57,7 +57,7 @@ const SingleArticle = () => {
                 <AuthorCard article={singleArticle} />
               </div>
 
-              <div className="pb-3">
+              <div className="col-lg-9 pb-3">
                 {!isLoading && !singleArticle?.articleImage ? (
                   <img src={logo1} alt="by pexel" />
                 ) : (
@@ -69,18 +69,15 @@ const SingleArticle = () => {
                 )}
               </div>
               <br />
-              <div>
-                <section
-                  className="col-sm-12 col-md-12 col-lg-8"
-                  dangerouslySetInnerHTML={{
-                    __html: singleArticle?.articleBody,
-                  }}
-                />
+              <div className="col-sm-12 col-md-12 col-lg-9">
+                {singleArticle?.articleBody && (
+                  <SingleViewEditor content={singleArticle?.articleBody} />
+                )}
               </div>
             </div>
           </div>
           {user?.id ? (
-            <div className="col-sm-12 col-md-12 col-lg-2">
+            <div className="col-sm-12 col-md-12 col-lg-3">
               <div className="action-button-wrapper2">
                 <button
                   className="btn btn-outline-success"
