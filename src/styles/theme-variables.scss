@@ -17,6 +17,10 @@ $themes: (
     editorButtonBackground: #dddde0,
     editorButtonColor: #000000,
     heroTextColor: #366eb8,
+    preColorBackground: #060b20,
+    preTextColor: #ffffff,
+    profileCardBackground: #060b20,
+    profileCardTextColor: #ffffff,
   ),
   dark: (
     colorBackground: #060b20,
@@ -35,8 +39,11 @@ $themes: (
     tagBadgeColor: #060b20,
     editorButtonBackground: #dddde0,
     editorButtonColor: #000000,
-    // heroTextColor: #eb5252,
     heroTextColor: #b4cff2,
+    preColorBackground: #181d30,
+    preTextColor: #ffffff,
+    profileCardBackground: #181d30,
+    profileCardTextColor: #ffffff,
   ),
 );
 
