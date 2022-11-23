@@ -1,9 +1,15 @@
+import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import Link from "@tiptap/extension-link";
 import TextAlign from "@tiptap/extension-text-align";
 import TextStyle from "@tiptap/extension-text-style";
 import Underline from "@tiptap/extension-underline";
-import { EditorContent, useEditor } from "@tiptap/react";
+import { EditorContent, ReactNodeViewRenderer, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import css from "highlight.js/lib/languages/css";
+import js from "highlight.js/lib/languages/javascript";
+import ts from "highlight.js/lib/languages/typescript";
+import html from "highlight.js/lib/languages/xml";
+import { lowlight } from "lowlight/lib/core";
 import React, { useCallback } from "react";
 import { AiOutlineRedo, AiOutlineUndo } from "react-icons/ai";
 import { BiCodeBlock, BiLink, BiParagraph, BiUnlink } from "react-icons/bi";
@@ -27,8 +33,13 @@ import {
   TbUnderline,
 } from "react-icons/tb";
 import { VscHorizontalRule } from "react-icons/vsc";
+import CodeBlockComponent from "../CodeBlockLowLight";
 import "./style.scss";
-import CodeBlock from "@tiptap/extension-code-block";
+
+lowlight.registerLanguage("html", html);
+lowlight.registerLanguage("css", css);
+lowlight.registerLanguage("js", js);
+lowlight.registerLanguage("ts", ts);
 
 const MenuBar = ({ editor }) => {
   const setLink = useCallback(() => {
@@ -289,7 +300,9 @@ const MenuBar = ({ editor }) => {
 const TipTap = (props) => {
   const editor = useEditor({
     extensions: [
-      StarterKit,
+      StarterKit.configure({
+        codeBlock: false,
+      }),
       Underline,
       TextStyle,
       TextAlign.configure({
@@ -303,10 +316,12 @@ const TipTap = (props) => {
         autolink: false,
         linkOnPaste: false,
       }),
-      CodeBlock.configure({
-        languageClassPrefix: "language-",
-        exitOnArrowDown: true,
-        exitOnTripleEnter: false,
+      CodeBlockLowlight.extend({
+        addNodeView() {
+          return ReactNodeViewRenderer(CodeBlockComponent);
+        },
+      }).configure({
+        lowlight,
       }),
     ],
     content: `${props.content}`,
