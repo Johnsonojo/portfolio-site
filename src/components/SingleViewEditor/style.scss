@@ -1,0 +1,204 @@
+@import "../../styles/theme-variables.scss";
+
+.text-editor {
+  border-radius: 0.5rem;
+  background-color: #fff;
+  min-height: 300px;
+  border: none;
+
+  .menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #bfbfc1;
+    padding-bottom: 0.5rem;
+
+    button {
+      @include themify($themes) {
+        color: themed("editorButtonColor") !important;
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background-color: #fff !important;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      transition: all 0.2s ease-in-out;
+      height: 30px !important;
+      font-size: 23px !important;
+      margin: 10px 10px 0px 0px !important;
+
+      &:hover {
+        @include themify($themes) {
+          background-color: themed("editorButtonBackground") !important;
+        }
+        background-color: #dddde0 !important;
+      }
+      &.is-active {
+        @include themify($themes) {
+          background-color: themed("editorButtonBackground") !important;
+        }
+        padding: 2px 3px;
+        border-radius: 0.2rem;
+      }
+    }
+    #dropdown-item-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      transition: all 0.2s ease-in-out;
+      font-size: 16px;
+      height: 30px;
+      margin-left: 10px;
+      border: 1px solid #616161;
+      color: #0d0d0d;
+      background-color: #fff;
+      cursor: pointer;
+
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+  }
+  .ProseMirror {
+    color: #0d0d0d;
+    padding: 1rem;
+    min-height: 20rem;
+    background-color: #fff;
+    padding-left: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 18px;
+    font-family: "Work Sans", sans-serif;
+
+    > * + * {
+      margin-top: 0.75em;
+    }
+
+    ul,
+    ol {
+      padding: 0 2rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @include themify($themes) {
+        color: themed("editorTextColor");
+      }
+      line-height: 1.1;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    code {
+      background-color: #616161;
+      color: #ffffff;
+    }
+
+    pre {
+      background: #0d0d0d;
+      color: #fff;
+      font-family: "JetBrainsMono", monospace;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 18px;
+
+      code {
+        color: inherit;
+        padding: 0;
+        background: none;
+        font-size: 0.8rem;
+      }
+    }
+
+    .hljs-comment,
+    .hljs-quote {
+      color: #616161;
+    }
+
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-attribute,
+    .hljs-tag,
+    .hljs-name,
+    .hljs-regexp,
+    .hljs-link,
+    .hljs-name,
+    .hljs-selector-id,
+    .hljs-selector-class {
+      color: #f98181;
+    }
+
+    .hljs-number,
+    .hljs-meta,
+    .hljs-built_in,
+    .hljs-builtin-name,
+    .hljs-literal,
+    .hljs-type,
+    .hljs-params {
+      color: #fbbc88;
+    }
+
+    .hljs-string,
+    .hljs-symbol,
+    .hljs-bullet {
+      color: #b9f18d;
+    }
+
+    .hljs-title,
+    .hljs-section {
+      color: #faf594;
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag {
+      color: #70cff8;
+    }
+
+    .hljs-emphasis {
+      font-style: italic;
+    }
+
+    .hljs-strong {
+      font-weight: 700;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    blockquote {
+      padding-left: 1rem;
+      border-left: 2px solid #616161;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #616161;
+      margin: 2rem 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    .ProseMirror-gapcursor {
+      display: none;
+    }
+  }
+
+  .is-empty::before {
+    content: attr(data-placeholder);
+    color: #6c757d;
+    border: none;
+  }
+}
