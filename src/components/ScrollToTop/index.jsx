@@ -24,10 +24,7 @@ const ScrollToTop = () => {
   return (
     <div>
       {showScrollToTopButton && (
-        <FaArrowUp
-          className="top-btn-position top-btn-style"
-          onClick={scrollTop}
-        />
+        <FaArrowUp className="scroll-to-top-btn" onClick={scrollTop} />
       )}
     </div>
   );
