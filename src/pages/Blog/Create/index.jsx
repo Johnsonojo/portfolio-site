@@ -44,7 +44,7 @@ const CreateArticle = () => {
 
   return (
     <div className="create-article">
-      <div className="container-fluid col-sm-12 col-md-8">
+      <div className="container-fluid col-sm-12 col-md-10 col-lg-8">
         <h2 className="mb-4 form-title">Create an article</h2>
         <form className="form-container" onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group mb-4">
