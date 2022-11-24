@@ -99,7 +99,11 @@ const CreateArticle = () => {
               name="articleBody"
               control={control}
               render={({ field: { onChange } }) => (
-                <TipTap onChange={onChange} content="" />
+                <TipTap
+                  onChange={onChange}
+                  content=""
+                  className="create-page-editor"
+                />
               )}
               defaultValue=""
               rules={{ required: true }}
