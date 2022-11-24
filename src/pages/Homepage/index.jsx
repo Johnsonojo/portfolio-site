@@ -40,22 +40,22 @@ const HomePage = () => {
   return (
     <div className="main-wrapper">
       <PageMeta
-        metalTitle="Portfolio | Johnsonojo"
-        metaName="description"
-        metaContent="Johnson Ojo's personal website"
+        pageTitle="Portfolio | Johnsonojo"
+        contentDescription="Johnson Ojo's personal website. Here I write on technologies I'm passionate about and showcase my projects."
+        canonicalLink="/"
       />
       <ScrollToTop />
 
       <div className="row top-wrapper">
         <div className="col-sm-12 col-md-9 hero">
           <div>
-            <h5>🖐 Hi, my name is</h5>
+            <h1>🖐 Hi there, my name is</h1>
           </div>
           <div>
-            <h1>Johnson Ojo</h1>
+            <h2>Johnson Ojo</h2>
           </div>
           <div>
-            <h2>
+            <h3>
               <span> {" < "}</span> I am a{" "}
               <span>
                 {text}
@@ -64,13 +64,23 @@ const HomePage = () => {
                 </span>
                 <span> {" /> "}</span>
               </span>
-            </h2>
-            <h3>And I am passionate about building things for the web.</h3>
+            </h3>
+            <h4>And I am passionate about building things for the web.</h4>
           </div>
 
           <div className="link-wrapper py-3">
             <p onClick={() => scrollToSection(techStack)}>Tech stack</p>
             <p onClick={() => scrollToSection(projects)}>Projects</p>
+            <p
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/file/d/1mDsUHqy1xJEgcKnHzBjOTwRBS0UDpLYx/view?usp=share_link",
+                  "_blank"
+                )
+              }
+            >
+              Resume
+            </p>
           </div>
         </div>
 
@@ -80,6 +90,8 @@ const HomePage = () => {
               src={profileImage}
               alt="Johnson Ojo"
               className="rounded-circle mx-auto img-fluid"
+              loading="lazy"
+              title="Johnson Ojo"
             />
           </div>
 
@@ -119,8 +131,8 @@ const HomePage = () => {
       </div>
 
       <div className="container my-5 section" ref={techStack}>
-        <h1>Tech Stack</h1>
-        <h5>Here are some of the technologies I have experience using:</h5>
+        <h2>Tech Stack</h2>
+        <h3>Here are some of the technologies I have experience using:</h3>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 tech-stack">
           <div className="mb-3">
             <StackCard stackList={frontend} title="Frontend" />
@@ -148,8 +160,8 @@ const HomePage = () => {
         </div>
       </div>
       <div className="container my-5 section" ref={projects}>
-        <h1 className="pb-4">Projects</h1>
-
+        <h2 className="pb-2">Projects</h2>
+        <h3>Here are some noteworthy projects I have worked on:</h3>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           {projectData?.map((project) => (
             <div className="col mb-4" key={project?.id}>

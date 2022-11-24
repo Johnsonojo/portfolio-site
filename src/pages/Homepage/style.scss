@@ -26,25 +26,25 @@
 
       h1 {
         @include themify($themes) {
+          color: themed("colorTextSecondary");
+        }
+        font-size: 1rem;
+      }
+
+      h2 {
+        @include themify($themes) {
           color: themed("colorTextPrimary");
         }
         font-size: 4.5rem;
         margin-bottom: 0.5rem;
       }
 
-      h2 {
+      h3 {
         @include themify($themes) {
           color: themed("heroTextColor");
         }
         font-size: 2.3rem;
         margin-bottom: 1rem;
-      }
-
-      h5 {
-        @include themify($themes) {
-          color: themed("colorTextSecondary");
-        }
-        font-size: 1rem;
       }
 
       .link-wrapper {
@@ -71,10 +71,10 @@
 
       @media screen and (max-width: 768px) {
         h1 {
-          font-size: 2.5rem;
+          font-size: 1.5rem;
         }
         h2 {
-          font-size: 1.5rem;
+          font-size: 2.5rem;
         }
         padding: 0px;
         padding-left: 10px;
@@ -85,7 +85,9 @@
       @include themify($themes) {
         background-color: themed("profileCardBackground");
         color: themed("profileCardTextColor");
+        box-shadow: 0px 6px 6px 6px themed("articleCardHoverBorderColor");
       }
+
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -133,11 +135,12 @@
     min-height: 85vh;
     padding: 20px;
 
-    h5 {
+    h3 {
       @include themify($themes) {
         color: themed("heroTextColor");
       }
       margin-bottom: 1rem;
+      font-size: 1.5rem;
     }
   }
 }
