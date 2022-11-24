@@ -68,7 +68,7 @@ const HomePage = () => {
             <h3>And I am passionate about building things for the web.</h3>
           </div>
 
-          <div className="link-wrapper">
+          <div className="link-wrapper py-3">
             <p onClick={() => scrollToSection(techStack)}>Tech stack</p>
             <p onClick={() => scrollToSection(projects)}>Projects</p>
           </div>
