@@ -43,11 +43,11 @@ const SingleArticle = () => {
       />
       <div className="container">
         <div className="row mt-4 pb-5">
-          <div className="col-sm-12 col-md-12 col-lg-9">
+          <div className="col-lg-9">
             {isLoading && <div>Loading...</div>}
             {isError && <div>{error}</div>}
             <div className="single-article-wrapper">
-              <div className="col-lg-9 pb-3">
+              <div className="col-sm-12 col-md-12 col-lg-9 pb-3">
                 <h1 className="article-card-title">
                   {singleArticle?.articleTitle}
                 </h1>
@@ -57,7 +57,7 @@ const SingleArticle = () => {
                 <AuthorCard article={singleArticle} />
               </div>
 
-              <div className="col-lg-9 pb-3">
+              <div className="col-sm-12 col-md-12 col-lg-9 pb-3">
                 {!isLoading && !singleArticle?.articleImage ? (
                   <img src={logo1} alt="by pexel" />
                 ) : (
@@ -69,7 +69,7 @@ const SingleArticle = () => {
                 )}
               </div>
               <br />
-              <div className="col-sm-12 col-md-12 col-lg-9">
+              <div className="col-sm-12 col-md-12 col-lg-9 pb-3">
                 {singleArticle?.articleBody && (
                   <SingleViewEditor content={singleArticle?.articleBody} />
                 )}
@@ -77,7 +77,7 @@ const SingleArticle = () => {
             </div>
           </div>
           {user?.id ? (
-            <div className="col-sm-12 col-md-12 col-lg-3">
+            <div className="col-sm-12 col-md-12 col-lg-2">
               <div className="action-button-wrapper2">
                 <button
                   className="btn btn-outline-success"
