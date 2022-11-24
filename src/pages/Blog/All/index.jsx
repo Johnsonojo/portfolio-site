@@ -30,23 +30,28 @@ const AllBlog = () => {
   return (
     <div className="articles-wrapper">
       <PageMeta
-        metalTitle="Blog | Johnsonojo"
-        metaName="description"
-        metaContent="Johnson Ojo's personal website"
+        pageTitle="Blog | Johnsonojo"
+        contentDescription="Johnson Ojo's personal blog. This is a list of all my blog posts with respect to software development and other related topics."
+        canonicalLink="/blog"
       />
 
-      <div className="top-wrapper container">
+      <div className="top-wrapper container mb-5">
         <div>
-          <h3 className="fw-bold py-5">Blog Posts</h3>
+          <h1 className="fw-bold pt-5 pb-2">Johnson Ojo's blog posts</h1>
         </div>
-        <div></div>
+
+        <div>
+          <p className="lead">
+            I write about web development and other related topics.
+          </p>
+        </div>
       </div>
 
       <div className="container">
         {allArticles?.length === 0 ? (
           <div className="row">
             <div className="text-center">
-              <h3>Available shortly</h3>
+              <h2>Coming Soon</h2>
             </div>
           </div>
         ) : (
