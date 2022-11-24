@@ -1,14 +1,11 @@
-.top-btn-position {
+.scroll-to-top-btn {
   position: fixed;
   bottom: 15px;
   right: 20px;
-}
-
-.top-btn-style {
-  height: 50px;
-  width: 50px;
+  z-index: 99;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
-  border: 2px solid #333;
   background-color: #fff;
   color: #333;
   padding: 8px;
