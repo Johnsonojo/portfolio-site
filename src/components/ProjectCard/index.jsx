@@ -7,10 +7,12 @@ const ProjectCard = ({ project }) => {
         className="card-img-top"
         src={project?.imageUrl}
         alt={project?.name}
+        loading="lazy"
+        title={project?.name}
       />
 
       <div className="card-body">
-        <h4 className="card-title">{project?.name}</h4>
+        <h3 className="card-title">{project?.name}</h3>
         <p className="card-text">{project?.description}</p>
 
         <div className="tech my-2">
@@ -30,14 +32,25 @@ const ProjectCard = ({ project }) => {
           >
             Github
           </button>
-          <button
+
+          {project?.hasFrontend ? (
+            <button
+              className="btn"
+              onClick={() => {
+                window.open(project?.website, "_blank");
+              }}
+            >
+              Website
+            </button>
+          ) : null}
+          {/* <button
             className="btn"
             onClick={() => {
               window.open(project?.website, "_blank");
             }}
           >
             {project?.hasFrontend ? "Website" : "API Docs"}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
