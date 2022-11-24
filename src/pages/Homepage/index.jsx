@@ -40,7 +40,7 @@ const HomePage = () => {
   return (
     <div className="main-wrapper">
       <PageMeta
-        pageTitle="Portfolio | Johnsonojo"
+        pageTitle="Portfolio | Johnson Ojo"
         contentDescription="Johnson Ojo's personal website. Here I write on technologies I'm passionate about and showcase my projects."
         canonicalLink="/"
       />
@@ -84,7 +84,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div class="col-sm-12 col-md-3 profile-card mt-3">
+        <div className="col-sm-12 col-md-3 profile-card mt-3">
           <div className="my-3">
             <img
               src={profileImage}
