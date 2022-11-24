@@ -12,7 +12,7 @@ const StackCard = ({ stackList, title }) => {
   // };
 
   return (
-    <div className="h-100 wrapper my-3">
+    <div className="h-100 wrapper py-3">
       <h4 className="px-2 py-2">{title}</h4>
       <div className="stack-wrapper">
         {stackList.map((stack) => (
