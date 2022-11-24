@@ -37,9 +37,9 @@ const SingleArticle = () => {
   return (
     <div className="article-wrapper pt-3 pb-5">
       <PageMeta
-        metalTitle={singleArticle?.articleTitle}
-        metaName="description"
-        metaContent={singleArticle?.articleBody?.slice(0, 150)}
+        pageTitle={singleArticle?.articleTitle}
+        contentDescription={singleArticle?.articleBody?.slice(0, 150)}
+        canonicalLink={`/blog/${singleArticle?.slug}`}
       />
       <div className="container">
         <div className="row mt-4 pb-5">
@@ -65,13 +65,18 @@ const SingleArticle = () => {
                     src={singleArticle?.articleImage}
                     alt=""
                     className="img-fluid"
+                    loading="lazy"
+                    title={singleArticle?.articleTitle}
                   />
                 )}
               </div>
               <br />
               <div className="col-sm-12 col-md-12 col-lg-9 pb-3">
                 {singleArticle?.articleBody && (
-                  <SingleViewEditor content={singleArticle?.articleBody} />
+                  <SingleViewEditor
+                    content={singleArticle?.articleBody}
+                    className="single-view"
+                  />
                 )}
               </div>
             </div>

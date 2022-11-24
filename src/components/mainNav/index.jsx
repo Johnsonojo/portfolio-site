@@ -31,6 +31,10 @@ const MainNav = () => {
             src={logo}
             alt="logo"
             style={{ width: "30px", height: "30px" }}
+            loading="lazy"
+            title="Portfolio Site"
+            height={60}
+            width={60}
           />
         </Link>
         <button

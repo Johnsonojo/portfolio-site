@@ -1,11 +1,12 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-const PageMeta = ({ metalTitle, metaName, metaContent }) => {
+const PageMeta = ({ pageTitle, contentDescription, canonicalLink }) => {
   return (
     <Helmet>
-      <title>{metalTitle}</title>
-      <meta name={metaName} content={metaContent} />
+      <title>{pageTitle}</title>
+      <meta name="description" content={contentDescription} />
+      <link rel="canonical" href={canonicalLink} />
     </Helmet>
   );
 };
