@@ -7,7 +7,13 @@ const AuthorCard = ({ article }) => {
   return (
     <div>
       <div className="profile-wrapper">
-        <img className="profile-image" src={pics} alt="profile" />
+        <img
+          className="profile-image"
+          src={pics}
+          alt="profile"
+          loading="lazy"
+          title="Johnson Ojo"
+        />
         <div className="profile-detail">
           <div className="text-success profile-name">Johnson Ojo</div>
           <p className="last-updated">

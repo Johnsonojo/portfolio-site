@@ -45,7 +45,7 @@ const SingleViewEditor = (props) => {
   });
 
   return (
-    <div className="text-editor">
+    <div className="single-view">
       <EditorContent editor={editor} {...props} />
     </div>
   );

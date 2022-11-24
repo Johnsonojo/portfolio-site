@@ -43,7 +43,7 @@ export const projectData = [
     description:
       "This is the blog section of my personal portfolio site. You can see my articles, filter articles by tags and search for articles by using a keyword.",
     imageUrl:
-      "https://res.cloudinary.com/adejunior/image/upload/v1668949871/To_Upload_wwob5x.png", // image url will be changed later
+      "https://res.cloudinary.com/adejunior/image/upload/v1669283568/blog_post_kct1da.png", // image url will be changed later
     github: "https://github.com/Johnsonojo/portfolio-site",
     website: "https://johnson-ojo.vercel.app/blog",
     techStack: [

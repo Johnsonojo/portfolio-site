@@ -144,9 +144,9 @@ const SearchPage = () => {
   return (
     <div className="search-article">
       <PageMeta
-        metalTitle="Search"
-        metaName="description"
-        metaContent="Search for contents in the blog using keywords"
+        pageTitle="Search"
+        contentDescription="Search for articles by using keywords or click on tags to search for articles"
+        canonicalLink="/blog/search"
       />
       <h1 className="text-center pt-3">Search Articles</h1>
       <div className="container col-sm-12 col-md-6 py-5">

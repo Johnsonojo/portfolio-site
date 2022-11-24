@@ -1,6 +1,6 @@
 @import "../../styles/theme-variables.scss";
 
-.text-editor {
+.single-view {
   border-radius: 0.5rem;
   min-height: 300px;
   border: none !important;
@@ -10,8 +10,6 @@
       background-color: themed("colorBackground") !important;
       color: themed("colorTextPrimary");
     }
-    padding: 1rem;
-    padding-left: 10px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     font-size: 18px;

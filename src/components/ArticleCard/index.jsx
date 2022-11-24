@@ -15,11 +15,13 @@ const ArticleCard = ({ article }) => {
         className="card-img-top"
         src={article?.articleImage || codePics}
         alt={article?.articleImage}
+        loading="lazy"
+        title={article?.articleTitle}
       />
       <div className="card-body px-3">
-        <h6 className="card-title article-card-title">
+        <h2 className="card-title article-card-title">
           {article?.articleTitle}
-        </h6>
+        </h2>
 
         <div>
           <div className="tags my-2">
