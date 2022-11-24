@@ -3,26 +3,25 @@ export const projectData = [
     id: 1,
     name: "Solution Recaller",
     description:
-      "This is a web app that helps you store the solutions to technical blockers or challenges and helps you recall them when you need them.",
+      "This is a web app on which you can store the solutions to technical blockers, challenges, bugs or problems and through a search keyword, helps you recall them when you need to.",
     imageUrl:
       "https://res.cloudinary.com/adejunior/image/upload/v1668949871/To_Upload_wwob5x.png",
     github: "https://github.com/Johnsonojo/solution-recall-frontend",
     website: "https://solution-recall-frontend.vercel.app/",
     techStack: [
       { id: 1, name: "React" },
-      { id: 2, name: "React-Query" },
-      { id: 3, name: "Scss" },
-      { id: 4, name: "Node.js" },
-      { id: 5, name: "Express" },
-      { id: 6, name: "PostgreSQL" },
+      { id: 2, name: "Scss" },
+      { id: 3, name: "Node.js" },
+      { id: 4, name: "Express" },
+      { id: 5, name: "PostgreSQL" },
     ],
     hasFrontend: true,
   },
   {
     id: 2,
-    name: "TSA Unlock Code Generator",
+    name: "TSA Code Generator",
     description:
-      "A PWA that enables you generate unlock codes for your TSA luggage locks. You enter your 3-digit number and see the possible unlock codes.",
+      "A progressive web app that enables you generate unlock codes for your luggage with with a 3-code system TSA lock. You enter your 3-digit number and see the possible unlock codes.",
     imageUrl:
       "https://res.cloudinary.com/adejunior/image/upload/v1668968280/TSA_n0kq0v.png",
     github: "https://github.com/Johnsonojo/tsa-unlock-code-generator",
@@ -41,28 +40,27 @@ export const projectData = [
     id: 3,
     name: "My Blog",
     description:
-      "This is the blog section of my personal portfolio site. You can see my articles, filter articles by tags and search for articles by using a keyword.",
+      "This is the blog section of my personal portfolio site. Here I document my learnings through articles. You can filter articles by tags or search for articles by using a keyword.",
     imageUrl:
-      "https://res.cloudinary.com/adejunior/image/upload/v1669283568/blog_post_kct1da.png", // image url will be changed later
+      "https://res.cloudinary.com/adejunior/image/upload/v1669283568/blog_post_kct1da.png",
     github: "https://github.com/Johnsonojo/portfolio-site",
     website: "https://johnson-ojo.vercel.app/blog",
     techStack: [
       { id: 1, name: "React" },
-      { id: 2, name: "React-Query" },
-      { id: 3, name: "Scss" },
-      { id: 6, name: "Node.js" },
-      { id: 7, name: "Express" },
-      { id: 8, name: "PostgreSQL" },
+      { id: 2, name: "Scss" },
+      { id: 3, name: "Node.js" },
+      { id: 4, name: "Express" },
+      { id: 5, name: "PostgreSQL" },
     ],
     hasFrontend: true,
   },
   {
     id: 4,
-    name: "Crypto Portfolio Tracker",
+    name: "Crypto Tracker",
     description:
-      "An API that helps you track your cryptocurrency portfolio. You can add your crypto assets and see their current value in USD. You can also see the total value of your portfolio.",
+      "An API that helps you track your cryptocurrency portfolio. You can add your crypto assets token name and see their current value in USD. You can also see the total value of your portfolio.",
     imageUrl:
-      "https://res.cloudinary.com/adejunior/image/upload/v1668949871/To_Upload_wwob5x.png", // image url will be changed later
+      "https://res.cloudinary.com/adejunior/image/upload/v1669299624/portfolio_tracker_jmyera.png",
     github: "https://github.com/Johnsonojo/crypto-portfolio-tracker",
     website: "Not Available",
     techStack: [
@@ -78,15 +76,17 @@ export const projectData = [
     id: 5,
     name: "Javascript Blockchain",
     description:
-      "A basic blockchain implementation in Javascript. Some of the basic features implemented include registering and broad casting a node, mining a block and getting miner's reward amongst others.",
+      "A basic javascript implementation of the blockchain. Some features implemented include creating a transaction, mining a block and getting the miner's reward amongst others.",
     imageUrl:
-      "https://res.cloudinary.com/adejunior/image/upload/v1668949871/To_Upload_wwob5x.png", // image url will be changed later
+      "https://res.cloudinary.com/adejunior/image/upload/v1669299555/blockchain_di8n3g.png",
     github: "https://github.com/Johnsonojo/javascript-blockchain",
     website: "Not Available",
     techStack: [
       { id: 1, name: "Javascript" },
       { id: 2, name: "Node.js" },
       { id: 3, name: "Express" },
+      { id: 4, name: "Sha256" },
+      { id: 5, name: "Request" },
     ],
     hasFrontend: false,
   },
