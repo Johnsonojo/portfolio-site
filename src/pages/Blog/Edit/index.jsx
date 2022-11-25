@@ -3,6 +3,8 @@ import { Controller, useForm } from "react-hook-form";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import PageMeta from "../../../components/RenderPageMeta";
+import ScrollToTop from "../../../components/ScrollToTop";
 import TipTap from "../../../components/TipTapEditor";
 import blogAPI from "../../../redux/api/blogAPI";
 import queryKeys from "../../../redux/api/queryKeys";
@@ -61,8 +63,14 @@ const EditArticle = () => {
 
   return (
     <div className="create-article">
+      <PageMeta
+        pageTitle="Edit post | Johnson Ojo"
+        contentDescription="This is where I write on technologies I'm passionate about and showcase my projects."
+        canonicalLink={`/blog/edit-article/${articleDetails?.slug}`}
+      />
+      <ScrollToTop />
       <div className="container-fluid col-sm-12 col-md-8">
-        <h2 className="mb-4 pt-3 form-title">Edit article details</h2>
+        <h1 className="mb-4 pt-3 form-title">Edit article details</h1>
         <form className="form-container">
           <div className="form-group mb-4">
             <label className="form-label">Title</label>

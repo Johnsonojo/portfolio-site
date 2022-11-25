@@ -24,7 +24,7 @@ const MainNav = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg main-wrapper">
+    <nav className="navbar navbar-expand-lg sticky-top main-wrapper">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img

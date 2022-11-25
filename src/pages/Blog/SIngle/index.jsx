@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import logo1 from "../../../assets/images/code.jpg";
 import AuthorCard from "../../../components/AuthorCard";
 import PageMeta from "../../../components/RenderPageMeta";
+import ScrollToTop from "../../../components/ScrollToTop";
 import SingleViewEditor from "../../../components/SingleViewEditor";
 import blogAPI from "../../../redux/api/blogAPI";
 import queryKeys from "../../../redux/api/queryKeys";
@@ -41,6 +42,7 @@ const SingleArticle = () => {
         contentDescription={singleArticle?.articleBody?.slice(0, 150)}
         canonicalLink={`/blog/${singleArticle?.slug}`}
       />
+      <ScrollToTop />
       <div className="container">
         <div className="row mt-4 pb-5">
           <div className="col-lg-9">
