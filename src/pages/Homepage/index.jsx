@@ -18,7 +18,7 @@ const HomePage = () => {
     loop: {},
     typeSpeed: 50,
     delaySpeed: 1500,
-    words: ["Software Developer", "Technical Writer", "Blockchain Enthusiast"],
+    words: ["Software Engineer", "Technical Writer", "Blockchain Enthusiast"],
   });
 
   const {
