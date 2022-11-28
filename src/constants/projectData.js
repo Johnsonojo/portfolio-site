@@ -56,24 +56,6 @@ export const projectData = [
   },
   {
     id: 4,
-    name: "Crypto Tracker",
-    description:
-      "An API that helps you track your cryptocurrency portfolio. You can add your crypto assets token name and see their current value in USD. You can also see the total value of your portfolio.",
-    imageUrl:
-      "https://res.cloudinary.com/adejunior/image/upload/v1669299624/portfolio_tracker_jmyera.png",
-    github: "https://github.com/Johnsonojo/crypto-portfolio-tracker",
-    website: "Not Available",
-    techStack: [
-      { id: 1, name: "Javascript" },
-      { id: 2, name: "Node.js" },
-      { id: 3, name: "Express" },
-      { id: 4, name: "Cheerio" },
-      { id: 5, name: "Axios" },
-    ],
-    hasFrontend: false,
-  },
-  {
-    id: 5,
     name: "Javascript Blockchain",
     description:
       "A basic javascript implementation of the blockchain. Some features implemented include creating a transaction, mining a block and getting the miner's reward amongst others.",
@@ -90,4 +72,22 @@ export const projectData = [
     ],
     hasFrontend: false,
   },
+  // {
+  //   id: 4,
+  //   name: "Crypto Tracker",
+  //   description:
+  //     "An app that helps you track your cryptocurrency portfolio. You can add your crypto assets token name and see their current value in USD. You can also see the total value of your portfolio.",
+  //   imageUrl:
+  //     "https://res.cloudinary.com/adejunior/image/upload/v1669299624/portfolio_tracker_jmyera.png",
+  //   github: "https://github.com/Johnsonojo/crypto-portfolio-tracker",
+  //   website: "Not Available",
+  //   techStack: [
+  //     { id: 1, name: "Javascript" },
+  //     { id: 2, name: "Node.js" },
+  //     { id: 3, name: "Express" },
+  //     { id: 4, name: "Cheerio" },
+  //     { id: 5, name: "Axios" },
+  //   ],
+  //   hasFrontend: false,
+  // },
 ];
