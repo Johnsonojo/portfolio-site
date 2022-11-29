@@ -6,6 +6,7 @@ import ProjectCard from "../../components/ProjectCard";
 import PageMeta from "../../components/RenderPageMeta";
 import ScrollToTop from "../../components/ScrollToTop";
 import StackCard from "../../components/StackCard";
+import { aboutMe } from "../../constants/homeData";
 import { projectData } from "../../constants/projectData";
 import { stackData } from "../../constants/stackData";
 import "./style.scss";
@@ -18,7 +19,7 @@ const HomePage = () => {
     loop: {},
     typeSpeed: 50,
     delaySpeed: 1500,
-    words: ["Software Engineer", "Technical Writer", "Blockchain Enthusiast"],
+    words: aboutMe,
   });
 
   const {
@@ -92,6 +93,8 @@ const HomePage = () => {
               className="rounded-circle mx-auto img-fluid"
               loading="lazy"
               title="Johnson Ojo"
+              width="auto"
+              height="auto"
             />
           </div>
 
