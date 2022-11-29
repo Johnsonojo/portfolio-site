@@ -9,6 +9,8 @@ const ProjectCard = ({ project }) => {
         alt={project?.name}
         loading="lazy"
         title={project?.name}
+        width="auto"
+        height="auto"
       />
 
       <div className="card-body">
