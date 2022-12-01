@@ -1,0 +1,57 @@
+@import "../../styles/theme-variables.scss";
+
+.profile-card {
+  @include themify($themes) {
+    background-color: themed("profileCardBackground");
+    color: themed("profileCardTextColor");
+    box-shadow: 0px 6px 6px 6px themed("articleCardHoverBorderColor");
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px 25px;
+
+  img {
+    margin: 0 20px;
+    object-fit: contain;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px;
+    align-self: normal;
+
+    div {
+      @include themify($themes) {
+        color: themed("profileCardTextColor");
+      }
+      &:hover {
+        transition: all 0.3s ease-in-out;
+        color: #f5a623;
+      }
+
+      svg {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .code-mentor-badge {
+    img {
+      border-radius: 5px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}

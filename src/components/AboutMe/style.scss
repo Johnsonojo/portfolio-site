@@ -1,0 +1,80 @@
+@import "../../styles/theme-variables.scss";
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 30px;
+
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+
+  h1 {
+    @include themify($themes) {
+      color: themed("colorTextSecondary");
+    }
+    font-size: 1rem;
+  }
+
+  h2 {
+    @include themify($themes) {
+      color: themed("colorTextPrimary");
+    }
+    font-size: 4.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    @include themify($themes) {
+      color: themed("heroTextColor");
+    }
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .link-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    p {
+      color: #f5a623;
+      list-style: none;
+      margin-right: 20px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      display: inline;
+
+      &:hover {
+        @include themify($themes) {
+          color: themed("colorTextPrimary");
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 2.5rem;
+    }
+    h3 {
+      font-size: 1.3rem;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+    padding: 0px;
+    padding-left: 10px;
+  }
+}
