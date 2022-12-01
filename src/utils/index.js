@@ -81,3 +81,5 @@ export const clearStorage = () => {
   localStorage.clear();
   return null;
 };
+
+export const openLinkInNewTab = (url) => window.open(url, "_blank");
