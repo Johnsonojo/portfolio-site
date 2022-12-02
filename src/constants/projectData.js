@@ -1,6 +1,26 @@
 export const projectData = [
   {
     id: 1,
+    name: "My Blog",
+    description:
+      "This is the blog section of my personal portfolio site. Here I document my learnings through articles. You can filter articles by tags or search for articles by using a keyword.",
+    imageUrl:
+      "https://res.cloudinary.com/adejunior/image/upload/v1669283568/blog_post_kct1da.png",
+    github: "https://github.com/Johnsonojo/portfolio-site",
+    website: "https://johnson-ojo.vercel.app/blog",
+    techStack: [
+      { id: 1, name: "React" },
+      { id: 2, name: "React-Query" },
+      { id: 3, name: "Bootstrap" },
+      { id: 4, name: "Node.js" },
+      { id: 5, name: "Express.Js" },
+      { id: 6, name: "PostgreSQL" },
+      { id: 7, name: "Sequelize" },
+    ],
+    hasFrontend: true,
+  },
+  {
+    id: 2,
     name: "Solution Recaller",
     description:
       "This is a web app on which you can store the solutions to technical blockers, challenges, bugs or problems and through a search keyword, helps you recall them when you need to.",
@@ -10,15 +30,17 @@ export const projectData = [
     website: "https://solution-recall-frontend.vercel.app/",
     techStack: [
       { id: 1, name: "React" },
-      { id: 2, name: "Scss" },
-      { id: 3, name: "Node.js" },
-      { id: 4, name: "Express" },
-      { id: 5, name: "PostgreSQL" },
+      { id: 2, name: "React-Query" },
+      { id: 3, name: "Bootstrap" },
+      { id: 4, name: "Node.js" },
+      { id: 5, name: "Express.Js" },
+      { id: 6, name: "PostgreSQL" },
+      { id: 7, name: "Sequelize" },
     ],
     hasFrontend: true,
   },
   {
-    id: 2,
+    id: 3,
     name: "TSA Code Generator",
     description:
       "A progressive web app that enables you generate unlock codes for your luggage with with a 3-code system TSA lock. You enter your 3-digit number and see the possible unlock codes.",
@@ -31,26 +53,9 @@ export const projectData = [
       { id: 2, name: "HTML" },
       { id: 3, name: "CSS" },
       { id: 4, name: "Javascript" },
-      { id: 5, name: "Node" },
+      { id: 5, name: "Node.js" },
       { id: 6, name: "Netlify" },
-    ],
-    hasFrontend: true,
-  },
-  {
-    id: 3,
-    name: "My Blog",
-    description:
-      "This is the blog section of my personal portfolio site. Here I document my learnings through articles. You can filter articles by tags or search for articles by using a keyword.",
-    imageUrl:
-      "https://res.cloudinary.com/adejunior/image/upload/v1669283568/blog_post_kct1da.png",
-    github: "https://github.com/Johnsonojo/portfolio-site",
-    website: "https://johnson-ojo.vercel.app/blog",
-    techStack: [
-      { id: 1, name: "React" },
-      { id: 2, name: "Scss" },
-      { id: 3, name: "Node.js" },
-      { id: 4, name: "Express" },
-      { id: 5, name: "PostgreSQL" },
+      { id: 7, name: "Progressive Web App" },
     ],
     hasFrontend: true,
   },
@@ -66,7 +71,7 @@ export const projectData = [
     techStack: [
       { id: 1, name: "Javascript" },
       { id: 2, name: "Node.js" },
-      { id: 3, name: "Express" },
+      { id: 3, name: "Express.Js" },
       { id: 4, name: "Sha256" },
       { id: 5, name: "Request" },
     ],
@@ -84,7 +89,7 @@ export const projectData = [
   //   techStack: [
   //     { id: 1, name: "Javascript" },
   //     { id: 2, name: "Node.js" },
-  //     { id: 3, name: "Express" },
+  //     { id: 3, name: "Express.Js" },
   //     { id: 4, name: "Cheerio" },
   //     { id: 5, name: "Axios" },
   //   ],

@@ -14,38 +14,39 @@ const ProjectCard = ({ project }) => {
       />
 
       <div className="card-body">
-        <h3 className="card-title">{project?.name}</h3>
+        <h3 className="card-title py-2">{project?.name}</h3>
         <p className="card-text">{project?.description}</p>
 
-        <div className="tech my-2">
-          {project?.techStack?.map((tech) => (
-            <span className="tech-badge py-1" key={tech.id}>
-              {tech?.name}
-            </span>
-          ))}
-        </div>
+        <div>
+          <div className="tech my-4">
+            {project?.techStack?.map((tech) => (
+              <span className="tech-badge py-1" key={tech.id}>
+                {tech?.name}
+              </span>
+            ))}
+          </div>
 
-        <div className="button-wrapper">
-          <button
-            className="btn"
-            onClick={() => {
-              window.open(project?.github, "_blank");
-            }}
-          >
-            Github
-          </button>
-
-          {project?.hasFrontend ? (
+          <div className="button-wrapper">
             <button
               className="btn"
               onClick={() => {
-                window.open(project?.website, "_blank");
+                window.open(project?.github, "_blank");
               }}
             >
-              Website
+              Github
             </button>
-          ) : null}
-          {/* <button
+
+            {project?.hasFrontend ? (
+              <button
+                className="btn"
+                onClick={() => {
+                  window.open(project?.website, "_blank");
+                }}
+              >
+                Website
+              </button>
+            ) : null}
+            {/* <button
             className="btn"
             onClick={() => {
               window.open(project?.website, "_blank");
@@ -53,6 +54,7 @@ const ProjectCard = ({ project }) => {
           >
             {project?.hasFrontend ? "Website" : "API Docs"}
           </button> */}
+          </div>
         </div>
       </div>
     </div>
