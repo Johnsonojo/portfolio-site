@@ -2,13 +2,13 @@ import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import profileImage from "../../assets/images/profile.jpeg";
 import { profileUrls } from "../../constants/profileCardData";
-import { getFromStorage, openLinkInNewTab } from "../../utils";
+import { openLinkInNewTab } from "../../utils";
 import "./style.scss";
 
 const { github, linkedin, twitter, codeMentor, codeMentorBadge } = profileUrls;
 
 const ProfileCard = () => {
-  const user = JSON.parse(getFromStorage("user"));
+  // const user = JSON.parse(getFromStorage("user"));
 
   return (
     <div className="col-sm-12 col-md-3 profile-card mt-3">
@@ -39,7 +39,15 @@ const ProfileCard = () => {
         </div>
       </div>
 
-      {user?.id ? (
+      <div className="code-mentor-badge">
+        <img
+          src={codeMentorBadge}
+          alt="Codementor badge"
+          onClick={() => openLinkInNewTab(codeMentor)}
+        />
+      </div>
+
+      {/* {user?.id ? (
         <div className="code-mentor-badge">
           <img
             src={codeMentorBadge}
@@ -47,7 +55,7 @@ const ProfileCard = () => {
             onClick={() => openLinkInNewTab(codeMentor)}
           />
         </div>
-      ) : null}
+      ) : null} */}
     </div>
   );
 };
