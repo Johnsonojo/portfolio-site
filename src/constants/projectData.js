@@ -1,13 +1,34 @@
 export const projectData = [
   {
-    id: 1,
-    name: "My Blog",
+    id: 0,
+    name: "Solution Recaller Angular",
     description:
-      "This is the blog section of my personal portfolio site. Here I document my learnings through articles. You can filter articles by tags or search for articles by using a keyword.",
+      "This is a web app on which you can store the solutions to technical blockers, challenges, bugs or problems and through a search keyword, helps you recall them when you need to.",
     imageUrl:
-      "https://res.cloudinary.com/adejunior/image/upload/v1669283568/blog_post_kct1da.png",
+      "https://res.cloudinary.com/adejunior/image/upload/v1674637401/homepage_qgm7bi.png",
+    github: "https://github.com/Johnsonojo/solution-recaller-angular",
+    website: "https://solution-recaller-angular.netlify.app/",
+    techStack: [
+      { id: 1, name: "Angular" },
+      { id: 2, name: "Typescript" },
+      { id: 3, name: "Ngx-Quill" },
+      { id: 4, name: "Quill Editor" },
+      { id: 5, name: "Node.js" },
+      { id: 6, name: "Express.js" },
+      { id: 7, name: "PostgreSQL" },
+      { id: 8, name: "Sequelize" },
+    ],
+    hasFrontend: true,
+  },
+  {
+    id: 1,
+    name: "My Portfolio site",
+    description:
+      "This is my personal portfolio site. Here I showcased my experiences and document my learnings through writing. You can filter articles by tags or search for articles by using a keyword.",
+    imageUrl:
+      "https://res.cloudinary.com/adejunior/image/upload/v1674640199/portfolio_lrpicn.png",
     github: "https://github.com/Johnsonojo/portfolio-site",
-    website: "https://johnson-ojo.vercel.app/blog",
+    website: "https://www.johnsonojo.tech/",
     techStack: [
       { id: 1, name: "React" },
       { id: 2, name: "React-Query" },
@@ -59,24 +80,24 @@ export const projectData = [
     ],
     hasFrontend: true,
   },
-  {
-    id: 4,
-    name: "Javascript Blockchain",
-    description:
-      "A basic javascript implementation of the blockchain. Some features implemented include creating a transaction, mining a block and getting the miner's reward amongst others.",
-    imageUrl:
-      "https://res.cloudinary.com/adejunior/image/upload/v1669299555/blockchain_di8n3g.png",
-    github: "https://github.com/Johnsonojo/javascript-blockchain",
-    website: "Not Available",
-    techStack: [
-      { id: 1, name: "Javascript" },
-      { id: 2, name: "Node.js" },
-      { id: 3, name: "Express.Js" },
-      { id: 4, name: "Sha256" },
-      { id: 5, name: "Request" },
-    ],
-    hasFrontend: false,
-  },
+  // {
+  //   id: 4,
+  //   name: "Javascript Blockchain",
+  //   description:
+  //     "A basic javascript implementation of the blockchain. Some features implemented include creating a transaction, mining a block and getting the miner's reward amongst others.",
+  //   imageUrl:
+  //     "https://res.cloudinary.com/adejunior/image/upload/v1669299555/blockchain_di8n3g.png",
+  //   github: "https://github.com/Johnsonojo/javascript-blockchain",
+  //   website: "Not Available",
+  //   techStack: [
+  //     { id: 1, name: "Javascript" },
+  //     { id: 2, name: "Node.js" },
+  //     { id: 3, name: "Express.Js" },
+  //     { id: 4, name: "Sha256" },
+  //     { id: 5, name: "Request" },
+  //   ],
+  //   hasFrontend: false,
+  // },
   // {
   //   id: 4,
   //   name: "Crypto Tracker",
