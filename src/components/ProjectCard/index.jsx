@@ -14,7 +14,7 @@ const ProjectCard = ({ project }) => {
       />
 
       <div className="card-body">
-        <h3 className="card-title py-2">{project?.name}</h3>
+        <h3 className="card-title py-2 text-center">{project?.name}</h3>
         <p className="card-text">{project?.description}</p>
 
         <div>

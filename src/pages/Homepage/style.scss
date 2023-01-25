@@ -21,10 +21,13 @@
     padding: 20px;
 
     h3 {
-      @include themify($themes) {
-        color: themed("heroTextColor");
-      }
-      margin-bottom: 1rem;
+      // @include themify($themes) {
+      //   color: themed("heroTextColor");
+      // }
+      background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      margin: 1.5rem 0rem;
       font-size: 1.5rem;
     }
   }
