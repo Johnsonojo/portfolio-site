@@ -27,9 +27,12 @@
   }
 
   h3 {
-    @include themify($themes) {
-      color: themed("heroTextColor");
-    }
+    // @include themify($themes) {
+    //   color: themed("heroTextColor");
+    // }
+    background: linear-gradient(to right, #f32170, #ff6b08, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     font-size: 2.3rem;
     margin-bottom: 1rem;
   }
