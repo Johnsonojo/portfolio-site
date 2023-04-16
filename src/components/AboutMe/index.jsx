@@ -1,6 +1,6 @@
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { homeData } from "../../constants/homeData";
-import { openLinkInNewTab } from "../../utils";
+import { getFromStorage, openLinkInNewTab } from "../../utils";
 import "./style.scss";
 
 const { aboutMe, resumeLink } = homeData;
@@ -19,6 +19,8 @@ const AboutMe = ({ techStack, projects }) => {
       behavior: "smooth",
     });
   };
+
+  const user = JSON.parse(getFromStorage("user"));
 
   return (
     <div className="col-sm-12 col-md-9 about-me">
@@ -45,7 +47,9 @@ const AboutMe = ({ techStack, projects }) => {
       <div className="link-wrapper py-3">
         <p onClick={() => scrollToSection(techStack)}>Tech stack</p>
         <p onClick={() => scrollToSection(projects)}>Projects</p>
-        <p onClick={() => openLinkInNewTab(resumeLink)}>Resume</p>
+        {user?.id ? (
+          <p onClick={() => openLinkInNewTab(resumeLink)}>Resume</p>
+        ) : null}
       </div>
     </div>
   );
