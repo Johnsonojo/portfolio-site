@@ -59,7 +59,7 @@ const SingleArticle = () => {
                 <AuthorCard article={singleArticle} />
               </div>
 
-              <div className="col-sm-12 col-md-12 col-lg-9 pb-3">
+              <div className="col-sm-12 col-md-12 col-lg-9">
                 {!isLoading && !singleArticle?.articleImage ? (
                   <img src={logo1} alt="by pexel" />
                 ) : (
@@ -72,7 +72,18 @@ const SingleArticle = () => {
                   />
                 )}
               </div>
-              <br />
+
+              <p className="author-credit mt-3 pb-4">
+                Photo from:{" "}
+                <span
+                  className="text-success"
+                  onClick={() =>
+                    window.open(singleArticle?.imageAuthorLink, "_blank")
+                  }
+                >
+                  {singleArticle?.imageAuthor}
+                </span>
+              </p>
               <div className="col-sm-12 col-md-12 col-lg-9 pb-3">
                 {singleArticle?.articleBody && (
                   <SingleViewEditor
