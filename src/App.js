@@ -15,7 +15,7 @@ import AllBlog from "./pages/Blog/All";
 import CreateArticle from "./pages/Blog/Create";
 import EditArticle from "./pages/Blog/Edit";
 import SingleArticle from "./pages/Blog/SIngle";
-import SearchPage from "./pages/Blog/Search";
+// import SearchPage from "./pages/Blog/Search";
 import HomePage from "./pages/Homepage";
 import LoginPage from "./pages/Login";
 import { getFromStorage } from "./utils";
@@ -47,7 +47,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/blog" element={<AllBlog />} />
-                <Route path="/blog/search" element={<SearchPage />} />
+                {/* <Route path="/blog/search" element={<SearchPage />} /> */}
                 <Route path="/blog/:slug" element={<SingleArticle />} />
                 <Route path="/login" element={<LoginPage />} />
 

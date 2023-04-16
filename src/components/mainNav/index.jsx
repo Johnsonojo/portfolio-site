@@ -67,9 +67,9 @@ const MainNav = () => {
                 <Link to="/blog/create-article">Create</Link>
               </li>
             ) : null}
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/blog/search">Search</Link>
-            </li>
+            </li> */}
           </ul>
           <div className="left-wrapper">
             <div>
