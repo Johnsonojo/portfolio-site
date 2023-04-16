@@ -7,15 +7,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.scss";
-import MainNav from "./components/mainNav";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import MainNav from "./components/mainNav";
 import { ThemeContext } from "./context/theme-context";
 import NotFoundPage from "./pages/404";
 import AllBlog from "./pages/Blog/All";
 import CreateArticle from "./pages/Blog/Create";
 import EditArticle from "./pages/Blog/Edit";
-// import SearchPage from "./pages/Blog/Search";
 import SingleArticle from "./pages/Blog/SIngle";
+import SearchPage from "./pages/Blog/Search";
 import HomePage from "./pages/Homepage";
 import LoginPage from "./pages/Login";
 import { getFromStorage } from "./utils";
@@ -47,7 +47,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/blog" element={<AllBlog />} />
-                {/* <Route path="/blog/search" element={<SearchPage />} /> */}
+                <Route path="/blog/search" element={<SearchPage />} />
                 <Route path="/blog/:slug" element={<SingleArticle />} />
                 <Route path="/login" element={<LoginPage />} />
 
