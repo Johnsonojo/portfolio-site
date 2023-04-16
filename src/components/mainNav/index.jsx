@@ -62,14 +62,14 @@ const MainNav = () => {
             <li className="nav-item">
               <Link to="/blog">Blog</Link>
             </li>
-            {user?.id && (
+            {user?.id ? (
               <li className="nav-item">
                 <Link to="/blog/create-article">Create</Link>
               </li>
-            )}
-            {/* <li className="nav-item">
+            ) : null}
+            <li className="nav-item">
               <Link to="/blog/search">Search</Link>
-            </li> */}
+            </li>
           </ul>
           <div className="left-wrapper">
             <div>
