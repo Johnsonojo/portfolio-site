@@ -38,6 +38,8 @@ const CreateArticle = () => {
 
     formData.append("articleTitle", data.articleTitle);
     formData.append("articleBody", data.articleBody);
+    formData.append("imageAuthor", data.imageAuthor);
+    formData.append("imageAuthorLink", data.imageAuthorLink);
     formData.append("tags", data.tags);
     formData.append("file", data.file[0]);
 
@@ -72,6 +74,7 @@ const CreateArticle = () => {
               {errors?.articleTitle?.message}
             </label>
           </div>
+
           <div className="form-group mb-4">
             <label className="form-label">Featured Image</label>
             <input
@@ -88,6 +91,42 @@ const CreateArticle = () => {
           </div>
 
           <div className="form-group mb-4">
+            <label className="form-label">Image Author</label>
+            <input
+              type="text"
+              className="form-control"
+              id="imageAuthor"
+              placeholder="Enter image author name"
+              {...register("imageAuthor", { required: true })}
+            />
+            <label className="error-label">
+              {errors.imageAuthor?.type === "required" &&
+                "Image author are required"}
+            </label>
+            <label className="error-label">
+              {errors?.imageAuthor?.message}
+            </label>
+          </div>
+
+          <div className="form-group mb-4">
+            <label className="form-label">Image Author</label>
+            <input
+              type="text"
+              className="form-control"
+              id="imageAuthorLink"
+              placeholder="Enter image author url"
+              {...register("imageAuthorLink", { required: true })}
+            />
+            <label className="error-label">
+              {errors.imageAuthorLink?.type === "required" &&
+                "Image author url are required"}
+            </label>
+            <label className="error-label">
+              {errors?.imageAuthorLink?.message}
+            </label>
+          </div>
+
+          <div className="form-group mb-4">
             <label className="form-label">Tags</label>
             <input
               type="text"
@@ -101,6 +140,7 @@ const CreateArticle = () => {
             </label>
             <label className="error-label">{errors?.tags?.message}</label>
           </div>
+
           <div className="form-group mb-4">
             <label className="form-label">Body</label>
             <Controller

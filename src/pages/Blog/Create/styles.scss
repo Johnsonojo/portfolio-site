@@ -35,6 +35,10 @@
         margin-bottom: 1rem;
       }
 
+      label {
+        font-weight: 600;
+      }
+
       input {
         @include themify($themes) {
           color: themed("inputTextColor");
