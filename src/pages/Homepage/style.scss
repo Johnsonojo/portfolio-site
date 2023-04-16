@@ -12,6 +12,10 @@
     justify-content: center;
     align-items: center;
     padding: 0 20px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   .section {
@@ -21,9 +25,6 @@
     padding: 20px;
 
     h3 {
-      // @include themify($themes) {
-      //   color: themed("heroTextColor");
-      // }
       background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
