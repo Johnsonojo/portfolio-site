@@ -1,13 +1,13 @@
 export const projectData = [
   {
     id: 0,
-    name: "Solution Recaller Angular",
+    name: "Solution Recaller V2",
     description:
       "This is a web app on which you can store the solutions to technical blockers, challenges, bugs or problems and through a search keyword, helps you recall them when you need to.",
     imageUrl:
       "https://res.cloudinary.com/adejunior/image/upload/v1674637401/homepage_qgm7bi.png",
     github: "https://github.com/Johnsonojo/solution-recaller-angular",
-    website: "https://solution-recaller-angular.netlify.app/",
+    website: "https://solution-recaller-v2.netlify.app/",
     techStack: [
       { id: 1, name: "Angular" },
       { id: 2, name: "Typescript" },
