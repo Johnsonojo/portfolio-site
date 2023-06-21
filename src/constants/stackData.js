@@ -44,8 +44,8 @@ export const stackData = {
     },
     {
       id: 7,
-      name: "Sass",
-      icon: "sass",
+      name: "SCSS",
+      icon: "scss",
       color: "#c69",
       background: "#f9f2f4",
     },
@@ -76,6 +76,20 @@ export const stackData = {
       icon: "angular",
       color: "#dd0031",
       background: "#ffeef0",
+    },
+    {
+      id: 12,
+      name: "Next.js",
+      icon: "next-dot-js",
+      color: "#000",
+      background: "#fff",
+    },
+    {
+      id: 13,
+      name: "Tailwind CSS",
+      icon: "tailwindcss",
+      color: "#38b2ac",
+      background: "#e6fffa",
     },
   ],
   backend: [
@@ -141,6 +155,20 @@ export const stackData = {
       icon: "rest-api",
       color: "#000000",
       background: "#ffffff",
+    },
+    {
+      id: 10,
+      name: "Knex.js",
+      icon: "knexjs",
+      color: "#f9f9f9",
+      background: "#4b4b4b",
+    },
+    {
+      id: 11,
+      name: "MySQL",
+      icon: "mysql",
+      color: "#4479a1",
+      background: "#e6f4fe",
     },
   ],
   deployment: [
