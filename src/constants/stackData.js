@@ -272,6 +272,20 @@ export const stackData = {
       color: "#ff6c37",
       background: "#ffe6e6",
     },
+    {
+      id: 6,
+      name: "Hardhat",
+      icon: "hardhat",
+      color: "#363636",
+      background: "#f2f2f2",
+    },
+    {
+      id: 7,
+      name: "Foundry",
+      icon: "foundry",
+      color: "#363636",
+      background: "#f2f2f2",
+    },
   ],
   programmingLanguages: [
     {
@@ -279,7 +293,7 @@ export const stackData = {
       name: "JavaScript",
       icon: "javascript",
       color: "#f7df1e",
-      background: "#fffbe6",
+      background: "#faf8f1",
     },
     {
       id: 2,
@@ -294,6 +308,13 @@ export const stackData = {
       icon: "python",
       color: "#3776ab",
       background: "#e6f4fe",
+    },
+    {
+      id: 4,
+      name: "Solidity",
+      icon: "solidity",
+      color: "#363636",
+      background: "#f2f2f2",
     },
   ],
   others: [
